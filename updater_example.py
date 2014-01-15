@@ -21,7 +21,7 @@ THUNDERMAPS_CATEGORY_ID = '<THUNDERMAPS_CATEGORY_ID>'
 
 # Create an instance of the ThunderMaps class.
 tm = thundermaps.ThunderMaps(THUNDERMAPS_API_KEY)
-list_feed = portland_dispatch_feed.Dispatch()
+list_feed = feed_example.Dispatch()
 
 # Try to load the source_ids already posted.
 source_ids = []
