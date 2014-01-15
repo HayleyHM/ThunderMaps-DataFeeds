@@ -11,10 +11,9 @@
 import thundermaps
 import time
 import portland_dispatch_feed
-import sys
 
 # Replace ... with your API key.
-THUNDERMAPS_API_KEY = '<YOUR_API_KEY>' #'7d73f9850eeb6880eaa5fbfe685a5a36'
+THUNDERMAPS_API_KEY = '<YOUR_API_KEY>' 
 
 # Replace ... with your account ID and category ID respectively.
 THUNDERMAPS_ACCOUNT_ID = '<THUNDERMAPS_ACCOUNT_ID>'
@@ -31,7 +30,7 @@ try:
 	source_ids = [i.strip() for i in source_ids_file.readlines()]
 	source_ids_file.close()
 except Exception as e:
-	sys.stdout.write("! WARNING: No valid cache file was found. This may cause duplicate reports.")
+	print("! WARNING: No valid cache file was found. This may cause duplicate reports.")
 
 # Run until interrupt received.
 while True:
