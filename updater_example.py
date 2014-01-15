@@ -10,7 +10,7 @@
 #
 import thundermaps
 import time
-import portland_dispatch_feed
+import feed_example
 
 # Replace ... with your API key.
 THUNDERMAPS_API_KEY = '<YOUR_API_KEY>' 
