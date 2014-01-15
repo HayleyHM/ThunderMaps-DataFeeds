@@ -14,15 +14,15 @@ Usage
 
 ### Feed module
 
-To use the Portland 911 Dispatch module, import it into your code using `import portland_dispatch_feed` and create an instance of the `Dispatch` class.
+To use the FeedExample module, import it into your code using `import feed_example` and create an instance of the `Dispatch` class.
 
 To get listings from the feed, use the `format_feed()` method:
 
 ```python
-import portland_dispatch_feed
+import feed_example
 
 # Get listings from Portland Dispatch
-list_feed = portland_dispatch_feed.Dispatch()
+list_feed = feed_example.Dispatch()
 listings = list_feed.format_feed()
 ```
 
