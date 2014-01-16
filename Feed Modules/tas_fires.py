@@ -25,7 +25,7 @@ class Incidents:
                         "latitude":location[0], 
                         "longitude":location[1], 
                         "description":description[2].strip().title() + description[3] + description[5] + description[6],
-                        "category_name": fire_type[1],
+                        "category_name":'Tasmania Fire Alert - ' + fire_type[1],
                         "source_id":item.find('guid').text}
             #create a list of dictionaries
             listings.append(listing)
