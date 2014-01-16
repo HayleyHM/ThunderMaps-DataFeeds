@@ -23,7 +23,7 @@ class Incidents:
                         "latitude":item.find('latitude').text, 
                         "longitude":item.find('longitude').text, 
                         "description":item.find('description').text,
-                        "category_name":item.find('category').text,
+                        "category_name":'UK Traffic Incident - ' + item.find('category').text,
                         "source_id":item.find('reference').text}
             #create a list of dictionaries
             listings.append(listing)
