@@ -18,7 +18,7 @@ class Incidents:
                         "latitude":location[0], 
                         "longitude":location[1], 
                         "description":item.find('description').text.replace('<p>', '').replace('</p>', ''),
-                        "category_name":incident_type[1],
+                        "category_name":'Scotland Traffic Incidents - ' + incident_type[1],
                         "source_id": unique_id[3]}
             #create a list of dictionaries
             listings.append(listing)
