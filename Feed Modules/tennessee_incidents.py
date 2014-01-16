@@ -24,7 +24,7 @@ class Incidents:
                         "latitude":location[0], 
                         "longitude":location[1], 
                         "description":item.find('description').text,
-                        "category_name":title[1],
+                        "category_name":'Tennessee Traffic Incident - ' + title[1],
                         "source_id":item.find('guid').text}
             #create a list of dictionaries
             listings.append(listing)
