@@ -23,10 +23,10 @@ class Imagery:
             summary = item[2].text.split('\n')
             imagery_id = summary[-2][10:]
             path_row = summary[5].split(',')
-            #image_link = summary[2].split()
-            #image_link = image_link[0] + ' ' + image_link[1] + ' ' + 'alt="Landsat7" </img>' 
+            image_link = summary[2].split()
+            image_link = image_link[0] + ' ' + image_link[1] + ' ' + 'alt="Landsat7>" </img>' 
             imagery_position = path_row[0] + ' -' + path_row[1] + " - Satellite Image"
-            description = summary[4][:19] + '\n' + imagery_id + '\n' + imagery_position + '\n' + path_row[2][1:-5] #+ '\n' + image_link
+            description = summary[4][:19] + '\n' + imagery_id + '\n' + imagery_position + '\n' + path_row[2][1:-5] + '\n' + image_link
             date_time = item[0].text
             format_date = self.format_datetime(date_time)
             latitude = item[4].text
