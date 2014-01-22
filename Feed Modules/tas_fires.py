@@ -15,7 +15,7 @@ class Incidents:
         listings = []
         #Scans through each incident in the feed and extracts useful information
         for item in tree.iter(tag='item'):
-            description = item.find('description').text.strip().split('<br />')
+            description = item.find('description').text.title().strip().split('<br />')
             fire_type = description[4].split(': ')
             date = item.find('pubDate').text
             format_date = self.format_datetime(date)
@@ -24,7 +24,7 @@ class Incidents:
             listing = {"occurred_on":format_date, 
                         "latitude":location[0], 
                         "longitude":location[1], 
-                        "description":description[2].strip().title() + description[3] + description[5] + description[6],
+                        "description":description[2].strip() + '<br/>' + description[3] + '<br/>' + description[4] + '<br/>' + description[5] + '<br/>' + description[6] + '<br/>' + description[7] + '<br/>' + description[8],
                         "category_name":'Tasmania Fire Alert - ' + fire_type[1],
                         "source_id":item.find('guid').text}
             #create a list of dictionaries
