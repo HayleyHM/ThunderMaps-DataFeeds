@@ -4,7 +4,7 @@
 # while caching which data has already been posted to ThunderMaps.
 # It should be used for a data feed that doesn't provide the ability to specifiy the start date for the data returned.
 #
-#Author: Daniel Gibbs <danielgibbs.name>
+#Author: Daniel Gibbs <danielgibbs.name> and Hayley Hume-Merry <hayley@thundermaps.com>
 #
 import urllib.request
 import pytz, datetime
