@@ -24,22 +24,18 @@ class Incidents:
             date = self.format_datetime(date_time)
             location = item[5].text
             location = location.split()
-            latitude = location[0]
-            longitude = location[1]
             description = item[2].text
             description = description.split('<br />')
-            incident_id = description[-3].replace('Incident Number: ', '')
-            incident_type = description[4].replace('Type: ', '') + ' - ACT Government'
             call_time = description[-1].strip('\n')
             agency = "Response " + description[5]
-            description = incident_name.title() + '\n' + call_time + '\n' + agency
+            description = incident_name.title() + '<br/>' + call_time + '<br/>' + agency
             #format each parameter into a dictionary
             listing = {"occurred_on":date, 
-                        "latitude":latitude, 
-                        "longitude":longitude, 
+                        "latitude":location[0], 
+                        "longitude":location[1], 
                         "description":description,
-                        "category_name":incident_type,
-                        "source_id":incident_id}
+                        "category_name":description[4].replace('Type: ', '') + ' - ACT Government',
+                        "source_id":description[-3].replace('Incident Number: ', '')}
             #create a list of dictionaries
             listings.append(listing)            
         return listings
