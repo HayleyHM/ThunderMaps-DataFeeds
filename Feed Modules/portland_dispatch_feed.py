@@ -19,24 +19,20 @@ class Dispatch:
         listings = []
         for entry in tree.iter('{http://www.w3.org/2005/Atom}entry'):
             location = entry[6].text.split()
-            latitude = location[0]        
-            longitude = location[1]
             date_time = entry[5].text.replace('T', ' ')
             dispatch_id = entry[0].text
-            dispatch_id = dispatch_id[-13:]
             dispatch_title = entry[4].attrib
             dispatch_title = dispatch_title['label'].title() + ' - Portland 911'
             agency = entry[3].text.replace('at', 'Location: ').split('[')
             summary = agency[0][:-5].title()
             agency = "Portland Dispatch Agency: " + agency[1][:-16]
-            description = summary + '\n' + agency
             #format each parameter into a dictionary
             listing = {"occurred_on":date_time, 
-                       "latitude":latitude, 
-                       "longitude":longitude, 
-                       "description":description,
+                       "latitude":location[0], 
+                       "longitude":location[1], 
+                       "description":summary + '<br/>' + agency,
                        "category_name":dispatch_title,
-                       "source_id":dispatch_id}
+                       "source_id":dispatch_id[-13:]}
             #create a list of dictionaries
             listings.append(listing)
         return listings
