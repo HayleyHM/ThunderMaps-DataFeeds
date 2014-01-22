@@ -19,7 +19,7 @@ class Fires():
             summary = alert.find('description').text.split('<br />')
             title = summary[0].split(':')
             title = title[1][:-1]
-            description = summary[4] + ' ' + summary[3]
+            description = summary[4] + '<br/>' + summary[3]
             location = alert[6].text.split()
             latitude = location[0]
             longitude = location[1]
