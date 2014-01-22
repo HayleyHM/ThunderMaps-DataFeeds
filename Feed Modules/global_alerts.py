@@ -19,22 +19,17 @@ class Incidents:
         listings = []
         for item in tree.iter(tag='item'):
             alert_title = item[0].text
-            latitude = item[9][0].text
-            longitude = item[9][1].text
-            description = alert_title + ' - ' + '\n' + item[1].text
             unique_id = item[3].text.split('=')
-            unique_id = unique_id[-1]
             incident_type = item[12].text
-            event_type = self.incident(incident_type) + " - Global Disaster Alert"
             date_time = item[4].text
             format_date = self.format_datetime(date_time)
             #format each parameter into a dictionary
             listing = {"occurred_on":format_date, 
-                       "latitude":latitude, 
-                       "longitude":longitude, 
-                       "description":description,
-                       "category_name":event_type,
-                       "source_id":unique_id}
+                       "latitude":item[9][0].text, 
+                       "longitude":item[9][1].text, 
+                       "description":alert_title + '<br/>' + item[1].text,
+                       "category_name":self.incident(incident_type) + " - Global Disaster Alert",
+                       "source_id":unique_id[-1]}
             #create a list of dictionaries
             listings.append(listing)            
         return listings
