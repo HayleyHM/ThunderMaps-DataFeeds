@@ -15,6 +15,9 @@ sys.path.append(r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps')
 import Sthundermaps
 import html.parser
 
+key = '<your_api_key>'
+account_id = '<thundermaps_account>'
+
 class Dispatch:
 	def format_feed(self):
 		h = html.parser.HTMLParser()
@@ -50,7 +53,7 @@ class Updater:
 	def __init__(self, key, account_id):
 		self.tm_obj = Sthundermaps.ThunderMaps(key)
 		self.feed_obj = Dispatch()
-		self.account_id = 'staging-test'
+		self.account_id = account_id
 		
 	def start(self):
 		# Try to load the source_ids already posted.
@@ -97,4 +100,5 @@ class Updater:
 			# Wait 30 minutes before trying again.
 			time.sleep(60 * 30)
 			
-Updater.start()
+updater = Updater(key, account_id)
+updater.start()
