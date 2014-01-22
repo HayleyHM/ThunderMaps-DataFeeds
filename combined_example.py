@@ -11,53 +11,48 @@ import pytz, datetime
 import time
 import xml.etree.ElementTree as ET
 import sys
-sys.path.append(r'/usr/local/thundermaps')
-import Wthundermaps
+sys.path.append(r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps')#r'/usr/local/thundermaps')
+import Sthundermaps
 import html.parser
 
 class Dispatch:
 	def format_feed(self):
 		h = html.parser.HTMLParser()
-		dispatch_file = urllib.request.urlretrieve('http://www.dot.nd.gov/travel-info-v2/georss/workzones.xml', 'workzones.xml')
-		tree = ET.parse('workzones.xml')
+		dispatch_file = urllib.request.urlretrieve('http://www.dot.nd.gov/travel-info-v2/georss/roads.xml', 'roads.xml')
+		tree = ET.parse('roads.xml')
 		listings = []
 		for entry in tree.iter('{http://www.w3.org/2005/Atom}entry'):
 				try: 
 						location = entry.find('{http://www.georss.org/georss}point').text.split()
 				except:
 						location = entry.find('{http://www.georss.org/georss}line').text.split()
-				work_id = entry.find('{http://www.w3.org/2005/Atom}id').text
+				condition_id = entry.find('{http://www.w3.org/2005/Atom}id').text
 				date = entry.find('{http://www.w3.org/2005/Atom}updated').text.replace('T', ' ')
-				summary = entry.find('{http://www.w3.org/2005/Atom}summary').text
-				format_summary = h.unescape(summary).replace('<strong>', '-').replace('</strong>', '').split('-')
+				summary = entry.find('{http://www.w3.org/2005/Atom}summary').text.split()
 				description = ''
-				for i in format_summary:
-						i = i.strip()
-						description += i + '\n'
-				work_type = format_summary[1].strip().split(':')
+				for i in summary:
+						i = i.strip().replace('<strong>', '').replace('</strong>', '')
+						description += i + ' '
+				road_type = summary[0].strip()
 				#format each parameter into a dictionary
 				listing = {"occurred_on":date, 
 		                           "latitude":location[0], 
 		                           "longitude":location[1], 
 		                           "description":description,  
-		                           "category_name":'North Dakota Roadworks - ' + work_type[1].title(),
-		                           "source_id":work_id}
+		                           "category_name":'North Dakota Road Conditions - ' + road_type.title(),
+		                           "source_id":condition_id}
 				#create a list of dictionaries
 				listings.append(listing)
+		print(listings)
 		return listings				
 	
 class Updater:
 	def __init__(self, key, account_id):
-		self.tm_obj = thundermaps.ThunderMaps(key)
+		self.tm_obj = Sthundermaps.ThunderMaps(key)
 		self.feed_obj = Dispatch()
-		self.account_id = account_id
+		self.account_id = 'staging-test'
 		
-	def start():
-		feed = Dispatch()
-		key = '<YOUR_API_KEY_HERE>'
-		account_id = '<THUNDERMAPS_ACCOUNT_ID>'
-		# Create an instance of ThunderMaps
-		tm = Wthundermaps.ThunderMaps(key)
+	def start(self):
 		# Try to load the source_ids already posted.
 		source_ids = []
 		try:
@@ -71,15 +66,14 @@ class Updater:
 		while True:
 			# Load the data from the data feed.
 			# This method should return a list of dicts.
-			items = feed.format_feed()
-		
+			items = self.feed_obj.format_feed()
 			# Create reports for the listings.
 			reports = []
 			for report in items:
 				# Add the report to the list of reports if it hasn't already been posted.
 				if report["source_id"] not in source_ids:
 					reports.append(report)
-					print("Adding %s" % report["description"])
+					print("Adding %s" % report["occurred_on"])
 					# Add the source id to the list.
 					source_ids.append(report["source_id"])
 		
@@ -88,7 +82,7 @@ class Updater:
 				# Upload 10 at a time.
 				for some_reports in [reports[i:i+10] for i in range(0, len(reports), 10)]:
 					print("Sending %d reports..." % len(some_reports))
-					tm.sendReports(account_id, some_reports)
+					self.tm_obj.sendReports(self.account_id, some_reports)
 					time.sleep(3)
 			# Save the posted source_ids.
 			try:
@@ -100,7 +94,7 @@ class Updater:
 				print("! WARNING: Unable to write cache file.")
 				print("! If there is an old cache file when this script is next run, it may result in duplicate reports.")
 		
-			# Wait 10 minutes before trying again.
-			time.sleep(60 * 10)
+			# Wait 30 minutes before trying again.
+			time.sleep(60 * 30)
 			
 Updater.start()
