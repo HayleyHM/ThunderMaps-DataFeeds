@@ -18,24 +18,18 @@ class Fires:
         tree = ET.parse('fire_alerts.xml')
         listings = []
         for item in tree.iter(tag='item'):
-            incident_name = item[0].text.title()
             incident_id = item[3].text.split(':')
-            incident_id = incident_id[2]
             location = item[6].text.split()
-            latitude = location[0]
-            longitude = location[1]
             summary = item.find("description").text.split('<br />')
-            incident_type = summary[4] + " - NSW".upper() + " Fire Incidents".title()
             date_time = summary[-1][9:]
             format_date = self.format_datetime(date_time)
-            description = incident_name + ' - ' + summary[3][8:].title() + '\n' + summary[6].title() + '\n' + summary[1].title()
             #format each parameter into a dictionary
             listing = {"occurred_on":format_date, 
-                       "latitude":latitude, 
-                       "longitude":longitude, 
-                       "description":description,
-                       "category_name":incident_type,
-                       "source_id":incident_id}
+                       "latitude":location[0], 
+                       "longitude":location[1], 
+                       "description":item[0].text.title() + ' - ' + summary[3][8:].title() + '<br/>' + summary[6].title() + '<br/>' + summary[1].title(),
+                       "category_name":summary[4] + " - NSW".upper() + " Fire Incidents".title(),
+                       "source_id":incident_id[2]}
             #create a list of dictionaries
             listings.append(listing)            
         return listings
