@@ -26,7 +26,7 @@ class Piracy:
                 if i.startswith('<b>Longitude:</b>'):
                     longitude = i.replace('<b>Longitude:</b>', '').replace('</div>', '').strip()
                 if i.startswith('<b>Details:</b>'):
-                    description = i.replace('<b>Details:</b>', '').replace('</div>', '').replace('\n', '').strip()
+                    description = i.replace('<b>Details:</b>', '').replace('</div>', '').replace('\n', '<br/>').strip()
             date = alert.find('pubDate').text
             format_date = self.format_datetime(date)
             alert_id = alert.find('guid').text.split('=')
