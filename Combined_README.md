@@ -41,7 +41,7 @@ import Pthundermaps #thundermaps.py file with photo upload capabilities
 Current Usage
 =============
 
-These modules are currently used all [ThunderBot](http://www.thundermaps.com/users/1109) accounts, including:
+These modules are currently used by [ThunderBot](http://www.thundermaps.com/users/1109) accounts, including:
 * USGS Landsat 7 Satellite Imagery
 * USGS Landsat 8 Satellite Imagery
 * GeoStock Global Photos
