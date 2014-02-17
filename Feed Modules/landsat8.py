@@ -4,58 +4,58 @@
 # while caching which data has already been posted to ThunderMaps.
 # It should be used for a data feed that doesn't provide the ability to specifiy the start date for the data returned.
 #
-#Author: Hayley Hume-Merry <hayley.ahm@gmail.com>
+#Author: hayley.ahm@gmail.com>
 #
 import urllib.request
 import pytz, datetime
 import xml.etree.ElementTree as ET
 import time
 import sys
-sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps' 
-import Wthundermaps
+sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps'
+import Pthundermaps
+import json
 
-key = 'THUNDERMAPS_API_KEY'  
-account_id = 'tennessee-traffic-incidents'
+key = 'THUNDERMAPS_API_KEY' 
+account_id = 'satellite'
 
 class Incidents:
 	def format_feed(self):
-		#Uses the urllib.request library to import the GeoRSS feed and saves as xml
-		incident_feed = urllib.request.urlretrieve('http://ww2.tdot.state.tn.us/tsw/GeoRSS/TDOTIncidentGeoRSS.xml', 'tennessee_incidents.xml')
-		tree = ET.parse('tennessee_incidents.xml')
+		#Retrieves the data feed and stores it as xml
+		satellite_file = urllib.request.urlretrieve('http://landsat.usgs.gov/Landsat8.rss', 'landsat8_feed.xml')
+		tree = ET.parse('landsat8_feed.xml')
+		root = tree.getroot()
 		listings = []
-		#Scans through each incident in the feed and extracts useful information
-		for item in tree.iter(tag='item'):
-			title = item.find('title').text.replace(' [', '- ').replace('(', '- ').split('- ')
-			date = item.find('.//{http://www.tdot.state.tn.us/tdotsmartway/}IncidentStart').text
+		for image in tree.iter(tag='item'):
+			title = image.find('title').text.split()
+			date = title[6] + ' ' + title[7]
 			format_date = self.format_datetime(date)
-			location = item.find('marker').text.split()
-			region = item.find('.//{http://www.tdot.state.tn.us/tdotsmartway/}COUNTY').attrib['{http://www.tdot.state.tn.us/tdotsmartway/}REGION']
-			if region == '1':
-				category = 'Region 1: Knoxville'
-			elif region == '2':
-				category = 'Region 2: Chattanooga'
-			elif region == '3':
-				category = 'Region 3: Nashville'
-			elif region == '4':
-				category = 'Region 4: Jackson & Memphis'
-			else:
-				category = 'Tennessee'		
-			#formats each parameter into a JSON format for application use
+			title = title[0] + ' ' + title[1] + ' ' + title[2] + ' ' + title[3] + " - Satellite Image"
+			imagery_id = image.find('guid').text
+			description = image.find('description').text.split('\n')
+			satellite = description[4].strip('</a><br/>')
+			cloud = description[5].split(',')
+			cloud = cloud[2].strip('<br/>')
+			scene_id = description[6]
+			download = description[8].strip(' (Requires user registration.)')
+			image_link = image.find('guid').text
+			description = satellite + '<br/>' + scene_id + '<br/>' + title + '<br/>' + cloud + '<br/>Download requires user registration: ' + download
+			# compile information into json format from application use
 			listing = {"occurred_on":format_date, 
-			           "latitude":location[0], 
-			           "longitude":location[1], 
-			           "description":item.find('description').text,
-			           "primary_category_name":category,
-			           "source_id":item.find('guid').text}
-			#create a list of dictionaries
+			          "latitude":image[4].text, 
+			          "longitude":image[5].text, 
+			          "description":description,
+			          "source_id":imagery_id[-25:-4],
+			          "attachment_url": image_link
+			          }
+			# create list of dictionaries
 			listings.append(listing)
 		return listings
-		
+
 	def format_datetime(self, date):
-		#convert date and time format from CST to UTC
-		date_time = date.replace('/', ' ').split()
-		date_time = str(date_time[2]) + '-' + str(date_time[0]) + '-' + str(date_time[1]) + ' ' + str(date_time[3])
-		local = pytz.timezone("CST6CDT")
+		# convert time format from GMT to UTC
+		date_time = date.replace(' GMT', '').split('.')
+		date_time = date_time[0]
+		local = pytz.timezone("GMT")
 		naive = datetime.datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
 		local_dt = local.localize(naive, is_dst = None)
 		utc_dt = str(local_dt.astimezone(pytz.utc))
@@ -63,7 +63,7 @@ class Incidents:
 	
 class Updater:
 	def __init__(self, key, account_id):
-		self.tm_obj = Wthundermaps.ThunderMaps(key)
+		self.tm_obj = Pthundermaps.ThunderMaps(key)
 		self.feed_obj = Incidents()
 		self.account_id = account_id
 		
@@ -96,6 +96,13 @@ class Updater:
 			if len(reports) > 0:
 				# Upload 10 at a time.
 				for some_reports in [reports[i:i+10] for i in range(0, len(reports), 10)]:
+					for report in some_reports:
+						# Add image
+						image_id = self.tm_obj.uploadImage(report["attachment_url"])
+						if image_id != None:
+							print("[%s] Uploaded image for listing %s..." % (time.strftime("%c"), report["source_id"]))
+							report["attachment_ids"] = [image_id]
+						del report["attachment_url"]
 					print("Sending %d reports..." % len(some_reports))
 					self.tm_obj.sendReports(account_id, some_reports)
 					time.sleep(3)
@@ -109,8 +116,8 @@ class Updater:
 				print("! WARNING: Unable to write cache file.")
 				print("! If there is an old cache file when this script is next run, it may result in duplicate reports.")
 		
-			# Wait 20 minutes before trying again.
-			time.sleep(60 * 20)
+			# Wait 6 hours before trying again.
+			time.sleep(60 * 60 * 6)
 			
 updater = Updater(key, account_id)
 updater.start()

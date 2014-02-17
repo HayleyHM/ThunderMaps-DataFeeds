@@ -7,59 +7,69 @@
 #Author: Hayley Hume-Merry <hayley.ahm@gmail.com>
 #
 import urllib.request
-import pytz, datetime
-import xml.etree.ElementTree as ET
 import time
+import xml.etree.ElementTree as ET
 import sys
-sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps' 
+sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps'
 import Wthundermaps
+import html.parser
 
 key = 'THUNDERMAPS_API_KEY'  
-account_id = 'tennessee-traffic-incidents'
+account_id = 'vic-fire-incidents'
 
 class Incidents:
 	def format_feed(self):
-		#Uses the urllib.request library to import the GeoRSS feed and saves as xml
-		incident_feed = urllib.request.urlretrieve('http://ww2.tdot.state.tn.us/tsw/GeoRSS/TDOTIncidentGeoRSS.xml', 'tennessee_incidents.xml')
-		tree = ET.parse('tennessee_incidents.xml')
+		h = html.parser.HTMLParser()
+		dispatch_file = urllib.request.urlretrieve('http://osom.cfa.vic.gov.au/public/osom/IN_COMING.rss', 'vic_fires.xml')
+		tree = ET.parse('vic_fires.xml')
 		listings = []
-		#Scans through each incident in the feed and extracts useful information
-		for item in tree.iter(tag='item'):
-			title = item.find('title').text.replace(' [', '- ').replace('(', '- ').split('- ')
-			date = item.find('.//{http://www.tdot.state.tn.us/tdotsmartway/}IncidentStart').text
+		for entry in tree.iter(tag='item'):
+			for i in entry.iter(tag='{http://www.georss.org/georss}collection'):
+				location = i.find('{http://www.georss.org/georss}point').text.split()
+			fire_id = entry.find('guid').text
+			date = entry.find('pubDate').text
 			format_date = self.format_datetime(date)
-			location = item.find('marker').text.split()
-			region = item.find('.//{http://www.tdot.state.tn.us/tdotsmartway/}COUNTY').attrib['{http://www.tdot.state.tn.us/tdotsmartway/}REGION']
-			if region == '1':
-				category = 'Region 1: Knoxville'
-			elif region == '2':
-				category = 'Region 2: Chattanooga'
-			elif region == '3':
-				category = 'Region 3: Nashville'
-			elif region == '4':
-				category = 'Region 4: Jackson & Memphis'
+			summary = entry.find('description').text
+			format_summary = h.unescape(summary).split()
+			description = ''
+			for i in format_summary:
+				i = i.strip().replace('<b>', '').replace('</b>', '')
+				description += i + ' '
+			category = description.split('<br>')
+			if 'grass' in category[4].lower() or 'scrub' in category[4].lower() or 'bush' in category[4].lower():
+				main_category = 'Grass & Bush Fire'
+			elif 'assist' in category[4].lower() or 'incident' in category[4].lower() or 'rescue' in category[4].lower():
+				main_category = 'Incident & Rescue'
+			elif 'structure' in category[4].lower() or 'car' in category[4].lower():
+				main_category = 'Structure & Vehicle'
+			elif 'non structure' in category[4].lower():
+				main_category = 'Non Structure'
+			elif 'fire' in category[4].lower():
+				main_category = 'Fire'
+			elif 'medical' in category[4].lower():
+				main_category = 'Medical'
 			else:
-				category = 'Tennessee'		
-			#formats each parameter into a JSON format for application use
+				main_category = 'Dispatch Call Out'
+			#format each parameter into json for application use
 			listing = {"occurred_on":format_date, 
-			           "latitude":location[0], 
-			           "longitude":location[1], 
-			           "description":item.find('description').text,
-			           "primary_category_name":category,
-			           "source_id":item.find('guid').text}
+				   "latitude":location[0], 
+				   "longitude":location[1], 
+				   "description":description.replace('<br>', '<br/>'),  
+				   "category_name":main_category,
+				   "source_id":fire_id}
 			#create a list of dictionaries
 			listings.append(listing)
 		return listings
-		
+	
 	def format_datetime(self, date):
-		#convert date and time format from CST to UTC
-		date_time = date.replace('/', ' ').split()
-		date_time = str(date_time[2]) + '-' + str(date_time[0]) + '-' + str(date_time[1]) + ' ' + str(date_time[3])
-		local = pytz.timezone("CST6CDT")
-		naive = datetime.datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
-		local_dt = local.localize(naive, is_dst = None)
-		utc_dt = str(local_dt.astimezone(pytz.utc))
-		return utc_dt
+		#convert date and time format to UTC
+			date_time = date.split()
+			monthDict = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
+			month = date_time[2]
+			if month in monthDict:
+				month = monthDict[month]
+			date_time = str(date_time[3]) + '-' + str(month) + '-' + str(date_time[1]) + ' ' + str(date_time[4])
+			return date_time		
 	
 class Updater:
 	def __init__(self, key, account_id):

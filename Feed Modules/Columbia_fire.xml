@@ -1,0 +1,629 @@
+<?xml version="1.0"?><?xml-stylesheet href="/eqcenter/catalogs/rssxsl.php?feed=eqs7day-M5.xml" type="text/xsl"                  media="screen"?>
+      <rss version="2.0" 
+      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:calldata="http://www.gocolumbiamo.com/PSJC/Services/911/911dispatch/calldatachema.php#" >
+  <channel><title>Columbia Fire Department Dispatch</title><description>Columbia Fire Department dispatch information</description><link>http://www.gocolumbiamo.com/PSJC/Services/911/911dispatch/fire.php</link><dc:publisher>City of Columbia, Missouri</dc:publisher><item><pubDate>Thu, 30 Jan 2014 20:12:54 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 8:12:54 PM : 4106 ARCTIC FOX DR-CO : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.99322</geo:lat>
+       <geo:long>-92.33499</geo:long><calldata:CallDateTime>1/30/2014 8:12:54 PM</calldata:CallDateTime>
+	   <calldata:Address>4106 ARCTIC FOX DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402084</calldata:InNum>
+	   <calldata:Timestamp>1391134374</calldata:Timestamp>
+	   <calldata:Latitude>38.99322</calldata:Latitude>
+	   <calldata:Longitude>-92.33499</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005 19011                                                                                                                                                                                             </calldata:FDids>
+	   <calldata:Trucks>Q9 - M221</calldata:Trucks>
+		   </item><item><pubDate>Thu, 30 Jan 2014 17:31:14 CST</pubDate><title>Special Event</title>
+       <description>1/30/2014 5:31:14 PM : 1 CHAMPIONS DR-CO : University Hospital Ambulance Service</description><geo:lat>38.93304</geo:lat>
+       <geo:long>-92.33362</geo:long><calldata:CallDateTime>1/30/2014 5:31:14 PM</calldata:CallDateTime>
+	   <calldata:Address>1 CHAMPIONS DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Special Event</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402076</calldata:InNum>
+	   <calldata:Timestamp>1391124674</calldata:Timestamp>
+	   <calldata:Latitude>38.93304</calldata:Latitude>
+	   <calldata:Longitude>-92.33362</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011                                                                                                                                                                                                   </calldata:FDids>
+	   <calldata:Trucks>M213</calldata:Trucks>
+		   </item><item><pubDate>Thu, 30 Jan 2014 19:23:18 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 7:23:18 PM : 3300 NEW HAVEN RD-CO.114 : Columbia Fire Department, Boone Hospital Center Ambulance, </description><geo:lat>38.912170</geo:lat>
+       <geo:long>-92.289960</geo:long><calldata:CallDateTime>1/30/2014 7:23:18 PM</calldata:CallDateTime>
+	   <calldata:Address>3300 NEW HAVEN RD-CO.114</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402083</calldata:InNum>
+	   <calldata:Timestamp>1391131398</calldata:Timestamp>
+	   <calldata:Latitude>38.912170</calldata:Latitude>
+	   <calldata:Longitude>-92.289960</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/19054</calldata:FDids>
+	   <calldata:Trucks>Q8 - M161</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 19:16:06 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 7:16:06 PM : 301 HENRY CLAY BLVD S-AS.C5 : University Hospital Ambulance Service</description><geo:lat>38.771530</geo:lat>
+       <geo:long>-92.260400</geo:long><calldata:CallDateTime>1/30/2014 7:16:06 PM</calldata:CallDateTime>
+	   <calldata:Address>301 HENRY CLAY BLVD S-AS.C5</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402082</calldata:InNum>
+	   <calldata:Timestamp>1391130966</calldata:Timestamp>
+	   <calldata:Latitude>38.771530</calldata:Latitude>
+	   <calldata:Longitude>-92.260400</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M241</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 18:44:52 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 6:44:52 PM : 2305 TREMAINE DR-CO : Columbia Fire Department, Boone Hospital Center Ambulance, </description><geo:lat>38.974530</geo:lat>
+       <geo:long>-92.267320</geo:long><calldata:CallDateTime>1/30/2014 6:44:52 PM</calldata:CallDateTime>
+	   <calldata:Address>2305 TREMAINE DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402081</calldata:InNum>
+	   <calldata:Timestamp>1391129092</calldata:Timestamp>
+	   <calldata:Latitude>38.974530</calldata:Latitude>
+	   <calldata:Longitude>-92.267320</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/19054</calldata:FDids>
+	   <calldata:Trucks>Q44 - M111 - Q5</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 18:30:17 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 6:30:17 PM : 25 CONLEY RD-CO.A : Columbia Fire Department, Boone Hospital Center Ambulance, </description><geo:lat>38.949690</geo:lat>
+       <geo:long>-92.296320</geo:long><calldata:CallDateTime>1/30/2014 6:30:17 PM</calldata:CallDateTime>
+	   <calldata:Address>25 CONLEY RD-CO.A</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402080</calldata:InNum>
+	   <calldata:Timestamp>1391128217</calldata:Timestamp>
+	   <calldata:Latitude>38.949690</calldata:Latitude>
+	   <calldata:Longitude>-92.296320</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/19054</calldata:FDids>
+	   <calldata:Trucks>Q5 - M161</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 18:01:02 CST</pubDate><title>Outside Fire</title>
+       <description>1/30/2014 6:01:02 PM : 1002 COWAN DR-CO : Columbia Fire Department</description><geo:lat>38.943600</geo:lat>
+       <geo:long>-92.361140</geo:long><calldata:CallDateTime>1/30/2014 6:01:02 PM</calldata:CallDateTime>
+	   <calldata:Address>1002 COWAN DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Outside Fire</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402079</calldata:InNum>
+	   <calldata:Timestamp>1391126462</calldata:Timestamp>
+	   <calldata:Latitude>38.943600</calldata:Latitude>
+	   <calldata:Longitude>-92.361140</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department</calldata:Agencies>
+	   <calldata:FDids>01005</calldata:FDids>
+	   <calldata:Trucks>E2 - F3</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 17:39:54 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 5:39:54 PM : 240 APPLE TREE CT-CO.2 : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.898560</geo:lat>
+       <geo:long>-92.346680</geo:long><calldata:CallDateTime>1/30/2014 5:39:54 PM</calldata:CallDateTime>
+	   <calldata:Address>240 APPLE TREE CT-CO.2</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402078</calldata:InNum>
+	   <calldata:Timestamp>1391125194</calldata:Timestamp>
+	   <calldata:Latitude>38.898560</calldata:Latitude>
+	   <calldata:Longitude>-92.346680</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>Q7 - M231</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 16:29:02 CST</pubDate><title>Alarm</title>
+       <description>1/30/2014 4:29:02 PM : 404 KEENE ST N-CO : Columbia Fire Department</description><geo:lat>38.957450</geo:lat>
+       <geo:long>-92.288260</geo:long><calldata:CallDateTime>1/30/2014 4:29:02 PM</calldata:CallDateTime>
+	   <calldata:Address>404 KEENE ST N-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Alarm</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402074</calldata:InNum>
+	   <calldata:Timestamp>1391120942</calldata:Timestamp>
+	   <calldata:Latitude>38.957450</calldata:Latitude>
+	   <calldata:Longitude>-92.288260</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department</calldata:Agencies>
+	   <calldata:FDids>01005</calldata:FDids>
+	   <calldata:Trucks>Q5</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 16:17:25 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 4:17:25 PM : 3003 FALLING LEAF CT-CO.81 : Boone Hospital Center Ambulance</description><geo:lat>38.917010</geo:lat>
+       <geo:long>-92.295550</geo:long><calldata:CallDateTime>1/30/2014 4:17:25 PM</calldata:CallDateTime>
+	   <calldata:Address>3003 FALLING LEAF CT-CO.81</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402073</calldata:InNum>
+	   <calldata:Timestamp>1391120245</calldata:Timestamp>
+	   <calldata:Latitude>38.917010</calldata:Latitude>
+	   <calldata:Longitude>-92.295550</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M161</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 16:03:05 CST</pubDate><title>Routine Transport</title>
+       <description>1/30/2014 4:03:05 PM : 1 HOSPITAL DR-CO : University Hospital Ambulance Service</description><geo:lat>38.938270</geo:lat>
+       <geo:long>-92.328390</geo:long><calldata:CallDateTime>1/30/2014 4:03:05 PM</calldata:CallDateTime>
+	   <calldata:Address>1 HOSPITAL DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Routine Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402071</calldata:InNum>
+	   <calldata:Timestamp>1391119385</calldata:Timestamp>
+	   <calldata:Latitude>38.938270</calldata:Latitude>
+	   <calldata:Longitude>-92.328390</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 15:57:34 CST</pubDate><title>Routine Transport</title>
+       <description>1/30/2014 3:57:34 PM : 1600 BROADWAY E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.949810</geo:lat>
+       <geo:long>-92.315850</geo:long><calldata:CallDateTime>1/30/2014 3:57:34 PM</calldata:CallDateTime>
+	   <calldata:Address>1600 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Routine Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402070</calldata:InNum>
+	   <calldata:Timestamp>1391119054</calldata:Timestamp>
+	   <calldata:Latitude>38.949810</calldata:Latitude>
+	   <calldata:Longitude>-92.315850</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M112</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 15:34:10 CST</pubDate><title>Long Distance Transport</title>
+       <description>1/30/2014 3:34:10 PM : 1600 BROADWAY E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.949810</geo:lat>
+       <geo:long>-92.315850</geo:long><calldata:CallDateTime>1/30/2014 3:34:10 PM</calldata:CallDateTime>
+	   <calldata:Address>1600 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Long Distance Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402068</calldata:InNum>
+	   <calldata:Timestamp>1391117650</calldata:Timestamp>
+	   <calldata:Latitude>38.949810</calldata:Latitude>
+	   <calldata:Longitude>-92.315850</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M151</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 15:02:43 CST</pubDate><title>Routine Transport</title>
+       <description>1/30/2014 3:02:43 PM : 1600 BROADWAY E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.949810</geo:lat>
+       <geo:long>-92.315850</geo:long><calldata:CallDateTime>1/30/2014 3:02:43 PM</calldata:CallDateTime>
+	   <calldata:Address>1600 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Routine Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402066</calldata:InNum>
+	   <calldata:Timestamp>1391115763</calldata:Timestamp>
+	   <calldata:Latitude>38.949810</calldata:Latitude>
+	   <calldata:Longitude>-92.315850</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M161</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 14:57:53 CST</pubDate><title>Routine Transport</title>
+       <description>1/30/2014 2:57:53 PM : 1 HOSPITAL DR-CO : University Hospital Ambulance Service</description><geo:lat>38.938270</geo:lat>
+       <geo:long>-92.328390</geo:long><calldata:CallDateTime>1/30/2014 2:57:53 PM</calldata:CallDateTime>
+	   <calldata:Address>1 HOSPITAL DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Routine Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402065</calldata:InNum>
+	   <calldata:Timestamp>1391115473</calldata:Timestamp>
+	   <calldata:Latitude>38.938270</calldata:Latitude>
+	   <calldata:Longitude>-92.328390</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M221</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 14:53:35 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 2:53:35 PM : 1000 ROLLINS ST-CO : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.941510</geo:lat>
+       <geo:long>-92.327220</geo:long><calldata:CallDateTime>1/30/2014 2:53:35 PM</calldata:CallDateTime>
+	   <calldata:Address>1000 ROLLINS ST-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402064</calldata:InNum>
+	   <calldata:Timestamp>1391115215</calldata:Timestamp>
+	   <calldata:Latitude>38.941510</calldata:Latitude>
+	   <calldata:Longitude>-92.327220</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>Q3 - M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 14:25:26 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 2:25:26 PM : 101 FAIRVIEW RD S-CO : University Hospital Ambulance Service, Columbia Fire Department, </description><geo:lat>38.953260</geo:lat>
+       <geo:long>-92.381270</geo:long><calldata:CallDateTime>1/30/2014 2:25:26 PM</calldata:CallDateTime>
+	   <calldata:Address>101 FAIRVIEW RD S-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402063</calldata:InNum>
+	   <calldata:Timestamp>1391113526</calldata:Timestamp>
+	   <calldata:Latitude>38.953260</calldata:Latitude>
+	   <calldata:Longitude>-92.381270</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service, Columbia Fire Department, </calldata:Agencies>
+	   <calldata:FDids>19011/01005</calldata:FDids>
+	   <calldata:Trucks>M231 - L2 - BC3</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 14:18:01 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 2:18:01 PM : 600 WALNUT ST E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.952480</geo:lat>
+       <geo:long>-92.330470</geo:long><calldata:CallDateTime>1/30/2014 2:18:01 PM</calldata:CallDateTime>
+	   <calldata:Address>600 WALNUT ST E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402062</calldata:InNum>
+	   <calldata:Timestamp>1391113081</calldata:Timestamp>
+	   <calldata:Latitude>38.952480</calldata:Latitude>
+	   <calldata:Longitude>-92.330470</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M151</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 14:08:11 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 2:08:11 PM : 805 ROLLINS ST-CO : Columbia Fire Department, Boone Hospital Center Ambulance, University Hospital Ambulance Service, </description><geo:lat>38.942590</geo:lat>
+       <geo:long>-92.327940</geo:long><calldata:CallDateTime>1/30/2014 2:08:11 PM</calldata:CallDateTime>
+	   <calldata:Address>805 ROLLINS ST-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402061</calldata:InNum>
+	   <calldata:Timestamp>1391112491</calldata:Timestamp>
+	   <calldata:Latitude>38.942590</calldata:Latitude>
+	   <calldata:Longitude>-92.327940</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19054/19011</calldata:FDids>
+	   <calldata:Trucks>S3 - M151 - Q3 - M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 14:05:49 CST</pubDate><title>Long Distance Transport</title>
+       <description>1/30/2014 2:05:49 PM : 1600 BROADWAY E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.949810</geo:lat>
+       <geo:long>-92.315850</geo:long><calldata:CallDateTime>1/30/2014 2:05:49 PM</calldata:CallDateTime>
+	   <calldata:Address>1600 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Long Distance Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402060</calldata:InNum>
+	   <calldata:Timestamp>1391112349</calldata:Timestamp>
+	   <calldata:Latitude>38.949810</calldata:Latitude>
+	   <calldata:Longitude>-92.315850</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M112</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 13:40:49 CST</pubDate><title>Outside Fire</title>
+       <description>1/30/2014 1:40:49 PM : 801 CEDAR GROVE BLVD S-BC : Boone County Fire Protection District</description><geo:lat>38.940720</geo:lat>
+       <geo:long>-92.259530</geo:long><calldata:CallDateTime>1/30/2014 1:40:49 PM</calldata:CallDateTime>
+	   <calldata:Address>801 CEDAR GROVE BLVD S-BC</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Outside Fire</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402059</calldata:InNum>
+	   <calldata:Timestamp>1391110849</calldata:Timestamp>
+	   <calldata:Latitude>38.940720</calldata:Latitude>
+	   <calldata:Longitude>-92.259530</calldata:Longitude>
+	   <calldata:Agencies>Boone County Fire Protection District</calldata:Agencies>
+	   <calldata:FDids>01001</calldata:FDids>
+	   <calldata:Trucks>E1201 - E101 - G106 - G506 - BC90 - E1501 - CP1215 - CP91</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 13:26:38 CST</pubDate><title>Routine Transport</title>
+       <description>1/30/2014 1:26:38 PM : 1 HOSPITAL DR-CO : University Hospital Ambulance Service</description><geo:lat>38.938270</geo:lat>
+       <geo:long>-92.328390</geo:long><calldata:CallDateTime>1/30/2014 1:26:38 PM</calldata:CallDateTime>
+	   <calldata:Address>1 HOSPITAL DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Routine Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402058</calldata:InNum>
+	   <calldata:Timestamp>1391109998</calldata:Timestamp>
+	   <calldata:Latitude>38.938270</calldata:Latitude>
+	   <calldata:Longitude>-92.328390</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M231 - M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 13:00:55 CST</pubDate><title>Training</title>
+       <description>1/30/2014 1:00:55 PM : 201 ORR ST-CO : Columbia Fire Department</description><geo:lat>38.953810</geo:lat>
+       <geo:long>-92.325620</geo:long><calldata:CallDateTime>1/30/2014 1:00:55 PM</calldata:CallDateTime>
+	   <calldata:Address>201 ORR ST-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Training</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402057</calldata:InNum>
+	   <calldata:Timestamp>1391108455</calldata:Timestamp>
+	   <calldata:Latitude>38.953810</calldata:Latitude>
+	   <calldata:Longitude>-92.325620</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department</calldata:Agencies>
+	   <calldata:FDids>01005</calldata:FDids>
+	   <calldata:Trucks>Q6 - E2 - Q8 - L1 - Q44 - Q9</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 12:49:04 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 12:49:04 PM : 2415 CARNATION DR-CO : University Hospital Ambulance Service</description><geo:lat>38.980820</geo:lat>
+       <geo:long>-92.374300</geo:long><calldata:CallDateTime>1/30/2014 12:49:04 PM</calldata:CallDateTime>
+	   <calldata:Address>2415 CARNATION DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402055</calldata:InNum>
+	   <calldata:Timestamp>1391107744</calldata:Timestamp>
+	   <calldata:Latitude>38.980820</calldata:Latitude>
+	   <calldata:Longitude>-92.374300</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 12:27:45 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 12:27:45 PM : 502 CHRIS DR E-BC : Boone County Fire Protection District, University Hospital Ambulance Service, </description><geo:lat>38.893070</geo:lat>
+       <geo:long>-92.338310</geo:long><calldata:CallDateTime>1/30/2014 12:27:45 PM</calldata:CallDateTime>
+	   <calldata:Address>502 CHRIS DR E-BC</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402054</calldata:InNum>
+	   <calldata:Timestamp>1391106465</calldata:Timestamp>
+	   <calldata:Latitude>38.893070</calldata:Latitude>
+	   <calldata:Longitude>-92.338310</calldata:Longitude>
+	   <calldata:Agencies>Boone County Fire Protection District, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01001/19011</calldata:FDids>
+	   <calldata:Trucks>G806 - M231</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 12:13:21 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 12:13:21 PM : 2415 CARNATION DR-CO : University Hospital Ambulance Service</description><geo:lat>38.980820</geo:lat>
+       <geo:long>-92.374300</geo:long><calldata:CallDateTime>1/30/2014 12:13:21 PM</calldata:CallDateTime>
+	   <calldata:Address>2415 CARNATION DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402052</calldata:InNum>
+	   <calldata:Timestamp>1391105601</calldata:Timestamp>
+	   <calldata:Latitude>38.980820</calldata:Latitude>
+	   <calldata:Longitude>-92.374300</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 11:44:33 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 11:44:33 AM : 3904 OAKLAND GRAVEL RD-CO.D : Boone Hospital Center Ambulance</description><geo:lat>38.989880</geo:lat>
+       <geo:long>-92.302130</geo:long><calldata:CallDateTime>1/30/2014 11:44:33 AM</calldata:CallDateTime>
+	   <calldata:Address>3904 OAKLAND GRAVEL RD-CO.D</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402051</calldata:InNum>
+	   <calldata:Timestamp>1391103873</calldata:Timestamp>
+	   <calldata:Latitude>38.989880</calldata:Latitude>
+	   <calldata:Longitude>-92.302130</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M151</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 11:16:19 CST</pubDate><title>Routine Transport</title>
+       <description>1/30/2014 11:16:19 AM : 1 HOSPITAL DR-CO : University Hospital Ambulance Service</description><geo:lat>38.938270</geo:lat>
+       <geo:long>-92.328390</geo:long><calldata:CallDateTime>1/30/2014 11:16:19 AM</calldata:CallDateTime>
+	   <calldata:Address>1 HOSPITAL DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Routine Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402050</calldata:InNum>
+	   <calldata:Timestamp>1391102179</calldata:Timestamp>
+	   <calldata:Latitude>38.938270</calldata:Latitude>
+	   <calldata:Longitude>-92.328390</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M221</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 11:10:56 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 11:10:56 AM : 4113 JOSLYN CT-CO : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.945940</geo:lat>
+       <geo:long>-92.398000</geo:long><calldata:CallDateTime>1/30/2014 11:10:56 AM</calldata:CallDateTime>
+	   <calldata:Address>4113 JOSLYN CT-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402049</calldata:InNum>
+	   <calldata:Timestamp>1391101856</calldata:Timestamp>
+	   <calldata:Latitude>38.945940</calldata:Latitude>
+	   <calldata:Longitude>-92.398000</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>Q6 - M211 - M231</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 11:10:00 CST</pubDate><title>Long Distance Transport</title>
+       <description>1/30/2014 11:10:00 AM : 1600 BROADWAY E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.949810</geo:lat>
+       <geo:long>-92.315850</geo:long><calldata:CallDateTime>1/30/2014 11:10:00 AM</calldata:CallDateTime>
+	   <calldata:Address>1600 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Long Distance Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402048</calldata:InNum>
+	   <calldata:Timestamp>1391101800</calldata:Timestamp>
+	   <calldata:Latitude>38.949810</calldata:Latitude>
+	   <calldata:Longitude>-92.315850</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M111</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 11:06:39 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 11:06:39 AM : 5350 OLD MILLERS RD E-BC.120 : Columbia Fire Department, Boone County Fire Protection District, Boone Hospital Center Ambulance, </description><geo:lat>38.883740</geo:lat>
+       <geo:long>-92.258580</geo:long><calldata:CallDateTime>1/30/2014 11:06:39 AM</calldata:CallDateTime>
+	   <calldata:Address>5350 OLD MILLERS RD E-BC.120</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402047</calldata:InNum>
+	   <calldata:Timestamp>1391101599</calldata:Timestamp>
+	   <calldata:Latitude>38.883740</calldata:Latitude>
+	   <calldata:Longitude>-92.258580</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone County Fire Protection District, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/01001/19054</calldata:FDids>
+	   <calldata:Trucks>Q8 - E1501 - M161</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 10:31:21 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 10:31:21 AM : 320 DOMETRORCH RD N-BC : Boone County Fire Protection District, University Hospital Ambulance Service, </description><geo:lat>38.963500</geo:lat>
+       <geo:long>-92.476760</geo:long><calldata:CallDateTime>1/30/2014 10:31:21 AM</calldata:CallDateTime>
+	   <calldata:Address>320 DOMETRORCH RD N-BC</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402045</calldata:InNum>
+	   <calldata:Timestamp>1391099481</calldata:Timestamp>
+	   <calldata:Latitude>38.963500</calldata:Latitude>
+	   <calldata:Longitude>-92.476760</calldata:Longitude>
+	   <calldata:Agencies>Boone County Fire Protection District, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01001/19011</calldata:FDids>
+	   <calldata:Trucks>G906 - M221 - C916</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 10:31:12 CST</pubDate><title>Structure Fire</title>
+       <description>1/30/2014 10:31:12 AM : 700 BIG BEAR BLVD-CO : Columbia Fire Department, Boone Hospital Center Ambulance, </description><geo:lat>38.975620</geo:lat>
+       <geo:long>-92.328780</geo:long><calldata:CallDateTime>1/30/2014 10:31:12 AM</calldata:CallDateTime>
+	   <calldata:Address>700 BIG BEAR BLVD-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Structure Fire</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402046</calldata:InNum>
+	   <calldata:Timestamp>1391099472</calldata:Timestamp>
+	   <calldata:Latitude>38.975620</calldata:Latitude>
+	   <calldata:Longitude>-92.328780</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/19054</calldata:FDids>
+	   <calldata:Trucks>Q44 - E2 - Q8 - L1 - S3 - M111 - CF6 - BC3</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 10:20:51 CST</pubDate><title>Long Distance Transport</title>
+       <description>1/30/2014 10:20:51 AM : 1600 BROADWAY E-CO : Boone Hospital Center Ambulance</description><geo:lat>38.949810</geo:lat>
+       <geo:long>-92.315850</geo:long><calldata:CallDateTime>1/30/2014 10:20:51 AM</calldata:CallDateTime>
+	   <calldata:Address>1600 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Long Distance Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402044</calldata:InNum>
+	   <calldata:Timestamp>1391098851</calldata:Timestamp>
+	   <calldata:Latitude>38.949810</calldata:Latitude>
+	   <calldata:Longitude>-92.315850</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M112</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 10:11:24 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 10:11:24 AM : 103 DUNDEE DR-CO : University Hospital Ambulance Service</description><geo:lat>38.953130</geo:lat>
+       <geo:long>-92.377500</geo:long><calldata:CallDateTime>1/30/2014 10:11:24 AM</calldata:CallDateTime>
+	   <calldata:Address>103 DUNDEE DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402043</calldata:InNum>
+	   <calldata:Timestamp>1391098284</calldata:Timestamp>
+	   <calldata:Latitude>38.953130</calldata:Latitude>
+	   <calldata:Longitude>-92.377500</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 09:51:21 CST</pubDate><title>Long Distance Transport</title>
+       <description>1/30/2014 9:51:21 AM : 1 HOSPITAL DR-CO : University Hospital Ambulance Service</description><geo:lat>38.938270</geo:lat>
+       <geo:long>-92.328390</geo:long><calldata:CallDateTime>1/30/2014 9:51:21 AM</calldata:CallDateTime>
+	   <calldata:Address>1 HOSPITAL DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Long Distance Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402041</calldata:InNum>
+	   <calldata:Timestamp>1391097081</calldata:Timestamp>
+	   <calldata:Latitude>38.938270</calldata:Latitude>
+	   <calldata:Longitude>-92.328390</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M212</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 09:38:08 CST</pubDate><title>Alarm</title>
+       <description>1/30/2014 9:38:08 AM : 3422 WOODRAIL TER-CO : Columbia Fire Department</description><geo:lat>38.914260</geo:lat>
+       <geo:long>-92.363090</geo:long><calldata:CallDateTime>1/30/2014 9:38:08 AM</calldata:CallDateTime>
+	   <calldata:Address>3422 WOODRAIL TER-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Alarm</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402040</calldata:InNum>
+	   <calldata:Timestamp>1391096288</calldata:Timestamp>
+	   <calldata:Latitude>38.914260</calldata:Latitude>
+	   <calldata:Longitude>-92.363090</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department</calldata:Agencies>
+	   <calldata:FDids>01005</calldata:FDids>
+	   <calldata:Trucks>Q6</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 09:21:51 CST</pubDate><title>Long Distance Transport</title>
+       <description>1/30/2014 9:21:51 AM : 1 HOSPITAL DR-CO : University Hospital Ambulance Service</description><geo:lat>38.938270</geo:lat>
+       <geo:long>-92.328390</geo:long><calldata:CallDateTime>1/30/2014 9:21:51 AM</calldata:CallDateTime>
+	   <calldata:Address>1 HOSPITAL DR-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Long Distance Transport</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402039</calldata:InNum>
+	   <calldata:Timestamp>1391095311</calldata:Timestamp>
+	   <calldata:Latitude>38.938270</calldata:Latitude>
+	   <calldata:Longitude>-92.328390</calldata:Longitude>
+	   <calldata:Agencies>University Hospital Ambulance Service</calldata:Agencies>
+	   <calldata:FDids>19011</calldata:FDids>
+	   <calldata:Trucks>M222</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 08:43:30 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 8:43:30 AM : 901 ROLLINS ST-CO : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.942560</geo:lat>
+       <geo:long>-92.327060</geo:long><calldata:CallDateTime>1/30/2014 8:43:30 AM</calldata:CallDateTime>
+	   <calldata:Address>901 ROLLINS ST-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402038</calldata:InNum>
+	   <calldata:Timestamp>1391093010</calldata:Timestamp>
+	   <calldata:Latitude>38.942560</calldata:Latitude>
+	   <calldata:Longitude>-92.327060</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>TWR35 - M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 08:26:52 CST</pubDate><title>Training</title>
+       <description>1/30/2014 8:26:52 AM : 201 ORR ST-CO : Columbia Fire Department</description><geo:lat>38.953810</geo:lat>
+       <geo:long>-92.325620</geo:long><calldata:CallDateTime>1/30/2014 8:26:52 AM</calldata:CallDateTime>
+	   <calldata:Address>201 ORR ST-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Training</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402037</calldata:InNum>
+	   <calldata:Timestamp>1391092012</calldata:Timestamp>
+	   <calldata:Latitude>38.953810</calldata:Latitude>
+	   <calldata:Longitude>-92.325620</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department</calldata:Agencies>
+	   <calldata:FDids>01005</calldata:FDids>
+	   <calldata:Trucks>Q5 - Q7 - Q9 - L2 - SNZ1 - TWR35</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 07:48:13 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 7:48:13 AM : 2505 QUAIL DR-CO.A : Boone Hospital Center Ambulance</description><geo:lat>38.970270</geo:lat>
+       <geo:long>-92.299510</geo:long><calldata:CallDateTime>1/30/2014 7:48:13 AM</calldata:CallDateTime>
+	   <calldata:Address>2505 QUAIL DR-CO.A</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402036</calldata:InNum>
+	   <calldata:Timestamp>1391089693</calldata:Timestamp>
+	   <calldata:Latitude>38.970270</calldata:Latitude>
+	   <calldata:Longitude>-92.299510</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M151</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 07:40:07 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 7:40:07 AM : 4106 COMPTON RD-CO : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.929440</geo:lat>
+       <geo:long>-92.398060</geo:long><calldata:CallDateTime>1/30/2014 7:40:07 AM</calldata:CallDateTime>
+	   <calldata:Address>4106 COMPTON RD-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402034</calldata:InNum>
+	   <calldata:Timestamp>1391089207</calldata:Timestamp>
+	   <calldata:Latitude>38.929440</calldata:Latitude>
+	   <calldata:Longitude>-92.398060</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>Q6 - M231</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 06:21:18 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 6:21:18 AM : 4540 BELLVIEW DR W-BC.G : Boone County Fire Protection District, Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.917790</geo:lat>
+       <geo:long>-92.404060</geo:long><calldata:CallDateTime>1/30/2014 6:21:18 AM</calldata:CallDateTime>
+	   <calldata:Address>4540 BELLVIEW DR W-BC.G</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402033</calldata:InNum>
+	   <calldata:Timestamp>1391084478</calldata:Timestamp>
+	   <calldata:Latitude>38.917790</calldata:Latitude>
+	   <calldata:Longitude>-92.404060</calldata:Longitude>
+	   <calldata:Agencies>Boone County Fire Protection District, Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01001/01005/19011</calldata:FDids>
+	   <calldata:Trucks>E1401 - Q6 - M231</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 06:15:34 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 6:15:34 AM : 2508 BROADWAY W-CO : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.954110</geo:lat>
+       <geo:long>-92.376950</geo:long><calldata:CallDateTime>1/30/2014 6:15:34 AM</calldata:CallDateTime>
+	   <calldata:Address>2508 BROADWAY W-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402032</calldata:InNum>
+	   <calldata:Timestamp>1391084134</calldata:Timestamp>
+	   <calldata:Latitude>38.954110</calldata:Latitude>
+	   <calldata:Longitude>-92.376950</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>Q6 - M211</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 05:21:20 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 5:21:20 AM : 2012 ASH ST W-CO.B1 : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.957160</geo:lat>
+       <geo:long>-92.369710</geo:long><calldata:CallDateTime>1/30/2014 5:21:20 AM</calldata:CallDateTime>
+	   <calldata:Address>2012 ASH ST W-CO.B1</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402031</calldata:InNum>
+	   <calldata:Timestamp>1391080880</calldata:Timestamp>
+	   <calldata:Latitude>38.957160</calldata:Latitude>
+	   <calldata:Longitude>-92.369710</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>E2 - M221</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 05:15:59 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 5:15:59 AM : 208 FOX TRAIL ST-HA : Boone County Fire Protection District, Boone Hospital Center Ambulance, </description><geo:lat>39.118970</geo:lat>
+       <geo:long>-92.220190</geo:long><calldata:CallDateTime>1/30/2014 5:15:59 AM</calldata:CallDateTime>
+	   <calldata:Address>208 FOX TRAIL ST-HA</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402030</calldata:InNum>
+	   <calldata:Timestamp>1391080559</calldata:Timestamp>
+	   <calldata:Latitude>39.118970</calldata:Latitude>
+	   <calldata:Longitude>-92.220190</calldata:Longitude>
+	   <calldata:Agencies>Boone County Fire Protection District, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01001/19054</calldata:FDids>
+	   <calldata:Trucks>G306 - G1006 - M131 - C316</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 03:34:19 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 3:34:19 AM : 1501 VANDIVER DR-CO.248 : Columbia Fire Department, Boone Hospital Center Ambulance, </description><geo:lat>38.971690</geo:lat>
+       <geo:long>-92.313550</geo:long><calldata:CallDateTime>1/30/2014 3:34:19 AM</calldata:CallDateTime>
+	   <calldata:Address>1501 VANDIVER DR-CO.248</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402029</calldata:InNum>
+	   <calldata:Timestamp>1391074459</calldata:Timestamp>
+	   <calldata:Latitude>38.971690</calldata:Latitude>
+	   <calldata:Longitude>-92.313550</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/19054</calldata:FDids>
+	   <calldata:Trucks>Q44 - M111</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 01:40:15 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 1:40:15 AM : 1201 PAQUIN ST-CO.411 : Boone Hospital Center Ambulance</description><geo:lat>38.947910</geo:lat>
+       <geo:long>-92.323430</geo:long><calldata:CallDateTime>1/30/2014 1:40:15 AM</calldata:CallDateTime>
+	   <calldata:Address>1201 PAQUIN ST-CO.411</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402028</calldata:InNum>
+	   <calldata:Timestamp>1391067615</calldata:Timestamp>
+	   <calldata:Latitude>38.947910</calldata:Latitude>
+	   <calldata:Longitude>-92.323430</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M151</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 01:36:49 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 1:36:49 AM : 915 CHERRY ST-CO : Boone Hospital Center Ambulance</description><geo:lat>38.950600</geo:lat>
+       <geo:long>-92.326860</geo:long><calldata:CallDateTime>1/30/2014 1:36:49 AM</calldata:CallDateTime>
+	   <calldata:Address>915 CHERRY ST-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402027</calldata:InNum>
+	   <calldata:Timestamp>1391067409</calldata:Timestamp>
+	   <calldata:Latitude>38.950600</calldata:Latitude>
+	   <calldata:Longitude>-92.326860</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M151</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 01:03:05 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 1:03:05 AM : 4807 CLARK LN-CO.201 : Boone Hospital Center Ambulance</description><geo:lat>38.964670</geo:lat>
+       <geo:long>-92.263010</geo:long><calldata:CallDateTime>1/30/2014 1:03:05 AM</calldata:CallDateTime>
+	   <calldata:Address>4807 CLARK LN-CO.201</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402026</calldata:InNum>
+	   <calldata:Timestamp>1391065385</calldata:Timestamp>
+	   <calldata:Latitude>38.964670</calldata:Latitude>
+	   <calldata:Longitude>-92.263010</calldata:Longitude>
+	   <calldata:Agencies>Boone Hospital Center Ambulance</calldata:Agencies>
+	   <calldata:FDids>19054</calldata:FDids>
+	   <calldata:Trucks>M111</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 00:57:47 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 12:57:47 AM : 1107 BROADWAY E-CO : Columbia Fire Department, Boone Hospital Center Ambulance, </description><geo:lat>38.951660</geo:lat>
+       <geo:long>-92.325050</geo:long><calldata:CallDateTime>1/30/2014 12:57:47 AM</calldata:CallDateTime>
+	   <calldata:Address>1107 BROADWAY E-CO</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402025</calldata:InNum>
+	   <calldata:Timestamp>1391065067</calldata:Timestamp>
+	   <calldata:Latitude>38.951660</calldata:Latitude>
+	   <calldata:Longitude>-92.325050</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, Boone Hospital Center Ambulance, </calldata:Agencies>
+	   <calldata:FDids>01005/19054</calldata:FDids>
+	   <calldata:Trucks>SNZ1 - M151 - L1</calldata:Trucks>
+	   </item><item><pubDate>Thu, 30 Jan 2014 00:43:59 CST</pubDate><title>Medical Response</title>
+       <description>1/30/2014 12:43:59 AM : 1800 I70 DR SOUTHWEST-CO.114 : Columbia Fire Department, University Hospital Ambulance Service, </description><geo:lat>38.965420</geo:lat>
+       <geo:long>-92.365550</geo:long><calldata:CallDateTime>1/30/2014 12:43:59 AM</calldata:CallDateTime>
+	   <calldata:Address>1800 I70 DR SOUTHWEST-CO.114</calldata:Address>
+	   <calldata:ExtNatureDisplayName>Medical Response</calldata:ExtNatureDisplayName>
+	   <calldata:InNum>201402024</calldata:InNum>
+	   <calldata:Timestamp>1391064239</calldata:Timestamp>
+	   <calldata:Latitude>38.965420</calldata:Latitude>
+	   <calldata:Longitude>-92.365550</calldata:Longitude>
+	   <calldata:Agencies>Columbia Fire Department, University Hospital Ambulance Service, </calldata:Agencies>
+	   <calldata:FDids>01005/19011</calldata:FDids>
+	   <calldata:Trucks>E2 - M221</calldata:Trucks>
+	   </item> </channel></rss>

@@ -13,61 +13,82 @@ import time
 import sys
 sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps' 
 import Wthundermaps
-import re
+from geopy import geocoders
 
 key = 'THUNDERMAPS_API_KEY'  
-account_id = 'western-australia-incidents'
+account_id = 'christchurch-mobile-libraries'
 
 class Incidents:
 	def format_feed(self):
 		#Retrieves the data feed and stores it as xml
-		urllib.request.urlretrieve("http://www.dfes.wa.gov.au/alerts/_layouts/fesa.sps2010.internet/fesalistfeed.aspx?List=e2064c8d-e111-41e1-8925-d249098d1a5e&View=b26d1f1b-0afc-4a65-8592-1c31c3af1323", 'west_fires.xml')
-		tree = ET.parse('west_fires.xml')
+		urllib.request.urlretrieve("http://www.trumba.com/calendars/Mobile.rss", 'mobile_library.xml')
+		tree = ET.parse('mobile_library.xml')
 		listings = []
-		for entry in tree.iter(tag='item'):
-			date = entry.find('pubDate').text
-			format_date = self.format_datetime(date)
-			description = entry.find('description').text
-			category = description.replace('</b>', '-').replace('</div', '-').split('-')
-			try:
-				latitude = entry.find('.//{http://www.w3.org/2003/01/geo/wgs84_pos#}lat').text
-				longitude = entry.find('.//{http://www.w3.org/2003/01/geo/wgs84_pos#}long').text
-			except AttributeError:
-				continue
-			summary = re.sub('<[^>]*>', ' ', description)
-			if 'grass' in category[1].lower() or 'scrub' in category[1].lower() or 'bush' in category[1].lower():
-				main_category = 'Grass & Bush Fire'
-			elif 'assist' in category[1].lower() or 'incident' in category[1].lower() or 'rescue' in category[1].lower():
-				main_category = 'Incident & Rescue'
-			elif 'structure' in category[1].lower() or 'car' in category[1].lower():
-				main_category = 'Structure & Vehicle'
-			elif 'non structure' in category[1].lower():
-				main_category = 'Non Structure'
-			elif 'fire' in category[1].lower():
-				main_category = 'Fire'
-			elif 'medical' in category[1].lower():
-				main_category = 'Medical'
-			else:
-				main_category = 'Dispatch Call Out'		
-			# format each parameter into JSON format for application use
-			listing = {"occurred_on":format_date, 
-				        "latitude":latitude, 
-				        "longitude":longitude, 
-				        "description": summary.strip().replace('\n', '<br/>'),
-				        "category_name":main_category,
-				        "source_id":entry.find('guid').text
-				        }
-			listings.append(listing)
-		return listings
+		for item in tree.iter(tag='item'):
+			summary = item[1].text.split('<br/>')
+			address = summary[0]
+			title_address = item[0].text
+			if title_address[0] != 'New Year':
+				title_address = title_address[0].strip() + ', Christchurch'
+				location = self.geocoder(address, title_address)
+				if location == None:
+					continue
+				date_time = item[5].text
+				format_date = self.format_datetime(date_time)
+				unique_id = item[2].text.split('%')
+				title = item[0].text
+				if 'Mobile ' in title:
+					start = title.index('Mobile ')
+					end = start + 8
+					mobile_title = "Christchurch Mobile Library - " + title[start:end]
+				else:
+					mobile_title = "Chirstchurch Mobile Library"
+				description = summary[1].replace('&nbsp;&ndash;&nbsp;', ' until ')
+				link = '<a href="http://christchurchcitylibraries.com/mobiles/">Christchurch City Libraries</a>'
+				#format each parameter into json format for application use
+				listing = {"occurred_on":format_date, 
+				       "latitude":location[1][0], 
+				       "longitude":location[1][1], 
+				       "description":description + '\n' + 'For more information go to: %s' %link,
+				       "category_name":mobile_title,
+				       "source_id":unique_id[-1]
+				       }
+				listings.append(listing)
+			return listings
             
-	            
+	def geocoder(self, address, title_address):
+		#Geocodes addresses using the GoogleV3 package. This converts addresses to lat/long pairs
+		weekdays = {1:'Monday', 2:'Tuesday', 3:'Wednesday', 4:'Thursday', 5:'Friday', 6:'Saturday', 7:'Sunday'}
+		checker = address.split(',')
+		if checker[0] in weekdays.values():
+			try:
+				g = geocoders.GoogleV3()
+				(lat, long) = g.geocode(title_address)
+				if (lat, long) == 'None':
+					pass
+				else:
+					return (lat, long)
+			except TypeError:
+				pass
+		else:
+			try:
+				g = geocoders.GoogleV3()
+				(lat, long) = g.geocode(address)
+				if (lat, long) == 'None':   
+					pass
+				else:
+					return (lat, long)
+			except TypeError:
+				pass 
+           
+            
 	def format_datetime(self, date_time):
-		#convert date and time format from GMT to UTC
-		date_time = date_time.split()
+        #convert date and time format from GMT to UTC
+		date_time = date_time.replace(' GMT', '').split()
 		monthDict = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
-		if date_time[2] in monthDict:
-				month = monthDict[date_time[2]]
-		date_time = str(date_time[3]) + '-' + str(month) + '-' + str(date_time[1]) + ' ' + str(date_time[4])
+		if date_time[1] in monthDict:
+			month = monthDict[date_time[1]]
+		date_time = str(date_time[2]) + '-' + str(month) + '-' + str(date_time[0]) + ' ' + str(date_time[3])
 		local = pytz.timezone("GMT")
 		naive = datetime.datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
 		local_dt = local.localize(naive, is_dst = None)
@@ -122,8 +143,8 @@ class Updater:
 				print("! WARNING: Unable to write cache file.")
 				print("! If there is an old cache file when this script is next run, it may result in duplicate reports.")
 		
-			# Wait 20 minutes before trying again.
-			time.sleep(60 * 20)
+			# Wait 6 hours before trying again.
+			time.sleep(60 * 60 * 6)
 			
 updater = Updater(key, account_id)
 updater.start()

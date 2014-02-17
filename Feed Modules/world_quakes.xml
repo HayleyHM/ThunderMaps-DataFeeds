@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>Recent worldwide earthquakes</title>
+<link>http://www.bgs.ac.uk/schoolseismology/</link>
+<description>The latest 20 earthquakes recorded by the BGS School Seismology project</description>
+<language>en-gb</language>
+<lastBuildDate>Tue, 04 Feb 2014 23:00:00 GMT</lastBuildDate>
+<image>
+<title>BGS Logo</title>
+<url>http://www.bgs.ac.uk/images/logos/bgs_c_w_227x50.gif</url>
+<link>http://www.bgs.ac.uk/schoolseismology/</link>
+</image>
+<item>
+<title>Tue, 04 Feb 2014 05:31:19 GMT, 20KM N OF PINE MOUNTAIN CLUB, CALIFORNIA</title>
+<description>Date/time Tue, 04 Feb 2014 05:31:19 GMT : Magnitude 3.62ML : Depth 13.66km : Location 20km N of Pine Mountain Club, California</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39374</link>
+<pubDate>Tue, 04 Feb 2014 05:31:19 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>35.027668</geo:lat>
+<geo:long>-119.114502</geo:long>
+</item>
+<item>
+<title>Mon, 03 Feb 2014 09:03:21 GMT, 18KM NW OF CALDWELL, KANSAS</title>
+<description>Date/time Mon, 03 Feb 2014 09:03:21 GMT : Magnitude 3.9ML : Depth 5km : Location 18km NW of Caldwell, Kansas</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39351</link>
+<pubDate>Mon, 03 Feb 2014 09:03:21 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>37.1281</geo:lat>
+<geo:long>-97.7717</geo:long>
+</item>
+<item>
+<title>Mon, 03 Feb 2014 03:08:46 GMT, 12KM NW OF LIXOURION, GREECE</title>
+<description>Date/time Mon, 03 Feb 2014 03:08:46 GMT : Magnitude 6.1ML : Depth 13.7km : Location 12km NW of Lixourion, Greece</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39344</link>
+<pubDate>Mon, 03 Feb 2014 03:08:46 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>38.2924</geo:lat>
+<geo:long>20.3373</geo:long>
+</item>
+<item>
+<title>Sun, 02 Feb 2014 09:26:35 GMT, 192KM SSE OF L&apos;ESPERANCE ROCK, NEW ZEALAND</title>
+<description>Date/time Sun, 02 Feb 2014 09:26:35 GMT : Magnitude 6.6ML : Depth 19.46km : Location 192km SSE of L&apos;Esperance Rock, New Zealand</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39328</link>
+<pubDate>Sun, 02 Feb 2014 09:26:35 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>-32.9035</geo:lat>
+<geo:long>-177.8173</geo:long>
+</item>
+<item>
+<title>Sat, 01 Feb 2014 16:33:40 GMT, 13KM WSW OF LIXOURION, GREECE</title>
+<description>Date/time Sat, 01 Feb 2014 16:33:40 GMT : Magnitude 5ML : Depth 9.95km : Location 13km WSW of Lixourion, Greece</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39304</link>
+<pubDate>Sat, 01 Feb 2014 16:33:40 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>38.1754</geo:lat>
+<geo:long>20.2784</geo:long>
+</item>
+<item>
+<title>Sat, 01 Feb 2014 09:08:02 GMT, 11KM ESE OF PERKINS, OKLAHOMA</title>
+<description>Date/time Sat, 01 Feb 2014 09:08:02 GMT : Magnitude 3.9ML : Depth 5.01km : Location 11km ESE of Perkins, Oklahoma</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39298</link>
+<pubDate>Sat, 01 Feb 2014 09:08:02 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>35.9442</geo:lat>
+<geo:long>-96.906</geo:long>
+</item>
+<item>
+<title>Sat, 01 Feb 2014 01:25:18 GMT, 17KM SSW OF CARPINTERIA, CALIFORNIA</title>
+<description>Date/time Sat, 01 Feb 2014 01:25:18 GMT : Magnitude 3.2ML : Depth 16km : Location 17km SSW of Carpinteria, California</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39289</link>
+<pubDate>Sat, 01 Feb 2014 01:25:18 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>34.2407</geo:lat>
+<geo:long>-119.5593</geo:long>
+</item>
+<item>
+<title>Wed, 29 Jan 2014 10:01:51 GMT, 36KM SSE OF PUTRE, CHILE</title>
+<description>Date/time Wed, 29 Jan 2014 10:01:51 GMT : Magnitude 5.5ML : Depth 120.2km : Location 36km SSE of Putre, Chile</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39245</link>
+<pubDate>Wed, 29 Jan 2014 10:01:51 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>-18.511</geo:lat>
+<geo:long>-69.4662</geo:long>
+</item>
+<item>
+<title>Mon, 27 Jan 2014 23:35:33 GMT, 19KM N OF GOLDEN HILLS, CALIFORNIA</title>
+<description>Date/time Mon, 27 Jan 2014 23:35:33 GMT : Magnitude 3.41ML : Depth 6.16km : Location 19km N of Golden Hills, California</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39203</link>
+<pubDate>Mon, 27 Jan 2014 23:35:33 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>35.3136673</geo:lat>
+<geo:long>-118.4993362</geo:long>
+</item>
+<item>
+<title>Mon, 27 Jan 2014 16:42:37 GMT, 42KM E OF PADILLA, BOLIVIA</title>
+<description>Date/time Mon, 27 Jan 2014 16:42:37 GMT : Magnitude 5.4ML : Depth 596.29km : Location 42km E of Padilla, Bolivia</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39192</link>
+<pubDate>Mon, 27 Jan 2014 16:42:37 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>-19.2253</geo:lat>
+<geo:long>-63.9038</geo:long>
+</item>
+<item>
+<title>Sun, 26 Jan 2014 18:45:09 GMT, 15KM WNW OF LIXOURION, GREECE</title>
+<description>Date/time Sun, 26 Jan 2014 18:45:09 GMT : Magnitude 5.4ML : Depth 10.29km : Location 15km WNW of Lixourion, Greece</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39159</link>
+<pubDate>Sun, 26 Jan 2014 18:45:09 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>38.269</geo:lat>
+<geo:long>20.2728</geo:long>
+</item>
+<item>
+<title>Sun, 26 Jan 2014 13:55:43 GMT, 0KM NW OF LIXOURION, GREECE</title>
+<description>Date/time Sun, 26 Jan 2014 13:55:43 GMT : Magnitude 6ML : Depth 18.81km : Location 0km NW of Lixourion, Greece</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39148</link>
+<pubDate>Sun, 26 Jan 2014 13:55:43 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>38.2077</geo:lat>
+<geo:long>20.425</geo:long>
+</item>
+<item>
+<title>Sat, 25 Jan 2014 05:14:20 GMT, 39KM SSE OF ADIPALA, INDONESIA</title>
+<description>Date/time Sat, 25 Jan 2014 05:14:20 GMT : Magnitude 6.1ML : Depth 83.18km : Location 39km SSE of Adipala, Indonesia</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39117</link>
+<pubDate>Sat, 25 Jan 2014 05:14:20 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>-8.0044</geo:lat>
+<geo:long>109.2383</geo:long>
+</item>
+<item>
+<title>Wed, 22 Jan 2014 18:45:04 GMT, 9KM NW OF TRINIDAD, COLORADO</title>
+<description>Date/time Wed, 22 Jan 2014 18:45:04 GMT : Magnitude 3.7ML : Depth 5km : Location 9km NW of Trinidad, Colorado</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39059</link>
+<pubDate>Wed, 22 Jan 2014 18:45:04 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>37.2237</geo:lat>
+<geo:long>-104.5812</geo:long>
+</item>
+<item>
+<title>Tue, 21 Jan 2014 10:50:00 GMT, 157KM S OF SEVERO-KURIL&apos;SK, RUSSIA</title>
+<description>Date/time Tue, 21 Jan 2014 10:50:00 GMT : Magnitude 5.1ML : Depth 27.9km : Location 157km S of Severo-Kuril&apos;sk, Russia</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39033</link>
+<pubDate>Tue, 21 Jan 2014 10:50:00 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>49.2687</geo:lat>
+<geo:long>155.9293</geo:long>
+</item>
+<item>
+<title>Mon, 20 Jan 2014 02:52:44 GMT, 38KM NNE OF MASTERTON, NEW ZEALAND</title>
+<description>Date/time Mon, 20 Jan 2014 02:52:44 GMT : Magnitude 6.3ML : Depth 27.38km : Location 38km NNE of Masterton, New Zealand</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=39012</link>
+<pubDate>Mon, 20 Jan 2014 02:52:44 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>-40.6499</geo:lat>
+<geo:long>175.8642</geo:long>
+</item>
+<item>
+<title>Sun, 19 Jan 2014 10:58:13 GMT, 50KM SSW OF PUERTO EL TRIUNFO, EL SALVADOR</title>
+<description>Date/time Sun, 19 Jan 2014 10:58:13 GMT : Magnitude 4.8ML : Depth 55.28km : Location 50km SSW of Puerto El Triunfo, El Salvador</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=38994</link>
+<pubDate>Sun, 19 Jan 2014 10:58:13 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>12.8934</geo:lat>
+<geo:long>-88.7962</geo:long>
+</item>
+<item>
+<title>Sat, 18 Jan 2014 22:19:29 GMT, NORTHERN MID-ATLANTIC RIDGE</title>
+<description>Date/time Sat, 18 Jan 2014 22:19:29 GMT : Magnitude 5.4ML : Depth 10km : Location Northern Mid-Atlantic Ridge</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=38972</link>
+<pubDate>Sat, 18 Jan 2014 22:19:29 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>26.4207</geo:lat>
+<geo:long>-44.5447</geo:long>
+</item>
+<item>
+<title>Fri, 17 Jan 2014 21:02:41 GMT, 21KM W OF JACO, COSTA RICA</title>
+<description>Date/time Fri, 17 Jan 2014 21:02:41 GMT : Magnitude 5.2ML : Depth 16.22km : Location 21km W of Jaco, Costa Rica</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=38948</link>
+<pubDate>Fri, 17 Jan 2014 21:02:41 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>9.6345</geo:lat>
+<geo:long>-84.8241</geo:long>
+</item>
+<item>
+<title>Fri, 17 Jan 2014 16:24:07 GMT, 134KM SSW OF CORINTO, NICARAGUA</title>
+<description>Date/time Fri, 17 Jan 2014 16:24:07 GMT : Magnitude 4.4ML : Depth 48.55km : Location 134km SSW of Corinto, Nicaragua</description>
+<link>http://www.bgs.ac.uk/schoolSeismology/schoolSeismology.cfc?method=viewQuakeDetails&amp;amp;quake_id=38945</link>
+<pubDate>Fri, 17 Jan 2014 16:24:07 GMT</pubDate>
+<category>EQRW</category>
+<geo:lat>11.3647</geo:lat>
+<geo:long>-87.6707</geo:long>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss xmlns:georss="http://www.georss.org/georss" version="2.0">
+<channel>
+<title>Incidents in ACT GeoRSS feed</title>
+<link>http://esa.act.gov.au/feeds/currentincidents.xml</link>
+<description>http://esa.act.gov.au/feeds/currentincidents.xml
+</description><pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<lastBuildDate>02 Feb 2014 07:35:31 EST</lastBuildDate>
+<generator>FME(R) 2013 SP2 Version: 2013.7.4.13475</generator>
+<item>
+<title>MOTOR VEHICLE ACCIDENT - PHILLIP</title>
+<link>http://esa.act.gov.au/feeds/currentincidents.xml</link>
+<description>Incident: MOTOR VEHICLE ACCIDENT - PHILLIP&lt;br /&gt;Location: HINDMARSH DRIVE EXIT, YAMBA DRIVE, PHILLIP&lt;br /&gt;Status: Out / Completed&lt;br /&gt;Suburb: PHILLIP&lt;br /&gt;Type: MOTOR VEHICLE ACCIDENT&lt;br /&gt;Agency: ACT Fire&lt;br /&gt;Incident Number: 005182-01022014&lt;br /&gt;Updated: 01 Feb 2014 11:57:56&lt;br /&gt;Time of Call: 01 Feb 2014 11:41:47
+</description><guid>005182-01022014</guid>
+<pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<georss:point>-35.3505864458731 149.098593861172</georss:point>
+</item>
+<item>
+<title>MOTOR VEHICLE ACCIDENT - PEARCE</title>
+<link>http://esa.act.gov.au/feeds/currentincidents.xml</link>
+<description>Incident: MOTOR VEHICLE ACCIDENT - PEARCE&lt;br /&gt;Location: COLLINGS STREET, MACFARLAND CRESCENT, PEARCE&lt;br /&gt;Status: Out / Completed&lt;br /&gt;Suburb: PEARCE&lt;br /&gt;Type: MOTOR VEHICLE ACCIDENT&lt;br /&gt;Agency: ACT Fire&lt;br /&gt;Incident Number: 005194-01022014&lt;br /&gt;Updated: 01 Feb 2014 13:11:36&lt;br /&gt;Time of Call: 01 Feb 2014 12:25:09
+</description><guid>005194-01022014</guid>
+<pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<georss:point>-35.3610189999959 149.077718000007</georss:point>
+</item>
+<item>
+<title>LPG CYLINDER (NO INJURIES) - HARRISON</title>
+<link>http://esa.act.gov.au/feeds/currentincidents.xml</link>
+<description>Incident: LPG CYLINDER (NO INJURIES) - HARRISON&lt;br /&gt;Location:  ANGORA STREET, HARRISON&lt;br /&gt;Status: Out / Completed&lt;br /&gt;Suburb: HARRISON&lt;br /&gt;Type: LPG CYLINDER (NO INJURIES)&lt;br /&gt;Agency: ACT Fire&lt;br /&gt;Incident Number: 005230-01022014&lt;br /&gt;Updated: 01 Feb 2014 14:06:55&lt;br /&gt;Time of Call: 01 Feb 2014 13:47:30
+</description><guid>005230-01022014</guid>
+<pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<georss:point>-35.2000751815117 149.159908190074</georss:point>
+</item>
+<item>
+<title>MEDICAL ASSIST (FIRE BRIGADE) - PALMERSTON</title>
+<link>http://esa.act.gov.au/2014/02/01/update-car-driven-through-garage-and-into-kitchen/</link>
+<description>Incident: MEDICAL ASSIST (FIRE BRIGADE) - PALMERSTON&lt;br /&gt;Location:  MT WARNING CRESCENT, PALMERSTON&lt;br /&gt;Status: Out / Completed&lt;br /&gt;Suburb: PALMERSTON&lt;br /&gt;Type: MEDICAL ASSIST (FIRE BRIGADE)&lt;br /&gt;Agency: ACT Fire&lt;br /&gt;Incident Number: 005260-01022014&lt;br /&gt;Updated: 01 Feb 2014 17:41:20&lt;br /&gt;Time of Call: 01 Feb 2014 16:46:44
+&lt;br /&gt;News alert: &lt;a href="http://esa.act.gov.au/2014/02/01/update-car-driven-through-garage-and-into-kitchen/"&gt;&lt;strong&gt;View news alert&lt;/strong&gt;&lt;/a&gt;</description><guid>005260-01022014</guid>
+<pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<georss:point>-35.1927760815114 149.119960290067</georss:point>
+</item>
+<item>
+<title>RUBBISH FIRE - GUNGAHLIN</title>
+<link>http://esa.act.gov.au/feeds/currentincidents.xml</link>
+<description>Incident: RUBBISH FIRE - GUNGAHLIN&lt;br /&gt;Location: YERRABI POND, GUNGAHLIN&lt;br /&gt;Status: Out / Completed&lt;br /&gt;Suburb: GUNGAHLIN&lt;br /&gt;Type: RUBBISH FIRE&lt;br /&gt;Agency: ACT Fire&lt;br /&gt;Incident Number: 005309-01022014&lt;br /&gt;Updated: 01 Feb 2014 21:16:19&lt;br /&gt;Time of Call: 01 Feb 2014 21:01:26
+</description><guid>005309-01022014</guid>
+<pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<georss:point>-35.1802945289797 149.129474354637</georss:point>
+</item>
+<item>
+<title>GRASS AND BUSH FIRE - MACQUARIE</title>
+<link>http://esa.act.gov.au/feeds/currentincidents.xml</link>
+<description>Incident: GRASS AND BUSH FIRE - MACQUARIE&lt;br /&gt;Location: JAMISON SHOPPING CENTRE, BOWMAN STREET, MACQUARIE&lt;br /&gt;Status: Out / Completed&lt;br /&gt;Suburb: MACQUARIE&lt;br /&gt;Type: GRASS AND BUSH FIRE&lt;br /&gt;Agency: ACT Fire&lt;br /&gt;Incident Number: 005341-02022014&lt;br /&gt;Updated: 02 Feb 2014 03:53:32&lt;br /&gt;Time of Call: 02 Feb 2014 03:40:17
+</description><guid>005341-02022014</guid>
+<pubDate>02 Feb 2014 07:35:31 EST</pubDate>
+<georss:point>-35.2538689866429 149.069577343275</georss:point>
+</item>
+</channel>
+</rss>

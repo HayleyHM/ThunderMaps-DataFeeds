@@ -4,55 +4,47 @@
 # while caching which data has already been posted to ThunderMaps.
 # It should be used for a data feed that doesn't provide the ability to specifiy the start date for the data returned.
 #
-#Module for pushing new UK Earthquake updates.
+#Author: Hayley Hume-Merry <hayley.ahm@gmail.com>
 #
-#Author: Hayley Hume-Merry <hayley@thundermaps.com>
-#
-
 import urllib.request
-import pytz, datetime
-import time
-import xml.etree.ElementTree as ET
 import time
 import sys
-sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps' 
+sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps'
 import Wthundermaps
+import xml.etree.ElementTree as ET
+import re
 
-key = 'THUNDERMAPS_API_KEY'  
-account_id = 'uk-earthquakes'
+key = 'THUNDERMAPS_API_KEY'
+account_id = 'new-york-city-alerts'
 
 class Incidents:
-    def format_feed(self):
-        #Retrieves the data feed and stores it as xml
-        quake_file = urllib.request.urlretrieve("http://www.bgs.ac.uk/feeds/MhSeismology.xml", 'quake_alerts.xml')
-        tree = ET.parse('quake_alerts.xml')
-        listings = []
-	# iterates throught the xml for relevant data
-        for item in tree.iter(tag='item'):
-            incident_name = item[0].text.split(':')
-            summary = item[1].text.split(';')
-            date_time = summary[0][23:-5]
-            format_date = self.format_datetime(date_time)
-            description = summary[1][1:].title() + '\n' + summary[0] + '\n' + summary[3][1:] + '\n' + summary[4][1:]
-            #format each parameter into json for application use
-            listing = {"occurred_on":format_date, 
-                       "latitude":item[5].text, 
-                       "longitude":item[6].text, 
-                       "description":description,
-                       "source_id":summary[2][11:-2].replace(',', '').replace('.', '').replace('-', '')}
-            #create a list of dictionaries
-            listings.append(listing)            
-        return listings
-        
-    def format_datetime(self, date_time):
-        #convert date and time format to UTC
-                date_time = date_time.split()
-                monthDict = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
-                if date_time[1] in monthDict:
-                    month = monthDict[date_time[1]]
-                year = '20' + date_time[2]
-                date_time = str(year) + '-' + str(month) + '-' + str(date_time[0]) + ' ' + str(date_time[3])
-                return date_time		
+	def format_feed(self):
+		listings = []
+		#Retrieves and formats the event data from EventFinda's API ... Authentication is required
+		feed = urllib.request.urlretrieve("http://rss.nyalert.gov/GeoAtom/feeds/_NewYorkStateGEOATOM.xml", 'alerts.xml')
+		tree = ET.parse('alerts.xml')
+		root = tree.getroot()
+		for entry in tree.iter('{http://www.w3.org/2005/Atom}entry'):
+			location = entry.find('{http://www.georss.org/georss}polygon').text.split()
+			description = entry.find('{http://www.w3.org/2005/Atom}summary').text
+			summary = re.sub('<[^>]*>', ' ', description)
+			for category in root.iter('{http://www.w3.org/2005/Atom}category'):
+				if category.get('label') == 'category':
+					type1 = category.get('term')
+				elif category.get('label') == 'subcategory':
+					type2 = category.get('term').title()
+			# format each parameter into json format for application use
+			listing = {"occurred_on":entry.find('{http://www.w3.org/2005/Atom}updated').text.replace('T', ' '), 
+				"latitude":location[0], 
+				"longitude":location[1], 
+				"description": summary.strip().replace('\n', '<br/>'),
+				"primary_category_name":type1,
+			        "secondary_category_name":type2,
+				"source_id":entry.find('{http://www.w3.org/2005/Atom}id').text
+				}
+			listings.append(listing)
+		return listings
+	
 	
 class Updater:
 	def __init__(self, key, account_id):
@@ -102,8 +94,8 @@ class Updater:
 				print("! WARNING: Unable to write cache file.")
 				print("! If there is an old cache file when this script is next run, it may result in duplicate reports.")
 		
-			# Wait 1 hour before trying again.
-			time.sleep(60 * 60 * 1)
+			# Wait 30 minutes before trying again.
+			time.sleep(60 * 30)
 			
 updater = Updater(key, account_id)
 updater.start()

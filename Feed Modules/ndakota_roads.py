@@ -4,17 +4,17 @@
 # while caching which data has already been posted to ThunderMaps.
 # It should be used for a data feed that doesn't provide the ability to specifiy the start date for the data returned.
 #
-#Author: Daniel Gibbs <danielgibbs.name>
+#Author: Hayley Hume-Merry <hayley.ahm@gmail.com>
 #
 import urllib.request
 import pytz, datetime
 import time
 import xml.etree.ElementTree as ET
 import sys
-sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps'
-import Wthundermaps
+sys.path.append(r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps') #r'/usr/local/thundermaps'
+import Sthundermaps
 
-key = '<your_api_key>'
+key = 'THUNDERMAPS_API_KEY'
 account_id = 'north-dakota-road-condition-alerts'
 
 class Incidents:
@@ -29,25 +29,40 @@ class Incidents:
 						location = entry.find('{http://www.georss.org/georss}line').text.split()
 				condition_id = entry.find('{http://www.w3.org/2005/Atom}id').text
 				date = entry.find('{http://www.w3.org/2005/Atom}updated').text.replace('T', ' ')
-				summary = entry.find('{http://www.w3.org/2005/Atom}summary').text.replace('<strong>', '').split('</strong>')
-				description = summary[0] + '\n'
-				for i in summary[1].split():
-						i = i.strip().replace('</strong>', '').replace('&nbsp;', ' ')
-						description += i + ' '
+				summary = entry.find('{http://www.w3.org/2005/Atom}summary').text.replace('&nbsp;&nbsp;&nbsp;', '<br/>').replace('<strong>', '').replace('&nbsp;', ' ').strip().split('</strong>')
+				format_summary = ''
+				for i in summary:
+					format_summary += i
+				if 'frost' in summary[0].lower():
+					category = 'Frost'
+				elif 'snow' in summary[0].lower() or 'slush' in summary[0].lower():
+					category = 'Snow & Slush'
+				elif 'ice' in summary[0].lower():
+					category = 'Ice'
+				elif 'seasonal' in summary[0].lower():
+					category = 'Seasonal Conditions'
+				elif 'no travel' in summary[0].lower():
+					category = 'No Travel Advised'
+				elif 'wet' in summary[0].lower():
+					category = 'Wet'
+				elif 'closed' in summary[0].lower():
+					category = 'Closed'
+				else:
+					category = 'Hazardous Conditions'
 				#format each parameter into a dictionary
 				listing = {"occurred_on":date, 
-		                           "latitude":location[0], 
-		                           "longitude":location[1], 
-		                           "description":description,  
-		                           "category_name":'North Dakota Road Conditions - ' + summary[0].title(),
-		                           "source_id":condition_id}
+					   "latitude":location[0], 
+					   "longitude":location[1], 
+					   "description":format_summary,  
+					   "primary_category_name": category,
+					   "source_id":condition_id}
 				#create a list of dictionaries
-				listings.append(listing)
-		return listings				
+				listings.append(listing)	
+		return listings			
 	
 class Updater:
 	def __init__(self, key, account_id):
-		self.tm_obj = Wthundermaps.ThunderMaps(key)
+		self.tm_obj = Sthundermaps.ThunderMaps(key)
 		self.feed_obj = Incidents()
 		self.account_id = account_id
 		

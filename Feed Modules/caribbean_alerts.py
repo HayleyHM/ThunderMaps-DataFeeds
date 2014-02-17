@@ -4,55 +4,62 @@
 # while caching which data has already been posted to ThunderMaps.
 # It should be used for a data feed that doesn't provide the ability to specifiy the start date for the data returned.
 #
-#Module for pushing new UK Earthquake updates.
+#Author: Hayley Hume-Merry <hayley.ahm@gmail.com>
 #
-#Author: Hayley Hume-Merry <hayley@thundermaps.com>
-#
-
 import urllib.request
 import pytz, datetime
-import time
 import xml.etree.ElementTree as ET
 import time
 import sys
 sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps' 
 import Wthundermaps
+import re
 
 key = 'THUNDERMAPS_API_KEY'  
-account_id = 'uk-earthquakes'
+account_id = 'caribbean-sea-alerts'
 
 class Incidents:
-    def format_feed(self):
-        #Retrieves the data feed and stores it as xml
-        quake_file = urllib.request.urlretrieve("http://www.bgs.ac.uk/feeds/MhSeismology.xml", 'quake_alerts.xml')
-        tree = ET.parse('quake_alerts.xml')
-        listings = []
-	# iterates throught the xml for relevant data
-        for item in tree.iter(tag='item'):
-            incident_name = item[0].text.split(':')
-            summary = item[1].text.split(';')
-            date_time = summary[0][23:-5]
-            format_date = self.format_datetime(date_time)
-            description = summary[1][1:].title() + '\n' + summary[0] + '\n' + summary[3][1:] + '\n' + summary[4][1:]
-            #format each parameter into json for application use
-            listing = {"occurred_on":format_date, 
-                       "latitude":item[5].text, 
-                       "longitude":item[6].text, 
-                       "description":description,
-                       "source_id":summary[2][11:-2].replace(',', '').replace('.', '').replace('-', '')}
-            #create a list of dictionaries
-            listings.append(listing)            
-        return listings
-        
-    def format_datetime(self, date_time):
-        #convert date and time format to UTC
-                date_time = date_time.split()
-                monthDict = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
-                if date_time[1] in monthDict:
-                    month = monthDict[date_time[1]]
-                year = '20' + date_time[2]
-                date_time = str(year) + '-' + str(month) + '-' + str(date_time[0]) + ' ' + str(date_time[3])
-                return date_time		
+	def format_feed(self):
+		#Retrieves the RSS feed from the Pacific Region Headquarters site
+		warning_file = urllib.request.urlretrieve('http://ptwc.weather.gov/feeds/ptwc_rss_caribe.xml', 'caribbean_feed.xml')
+		tree = ET.parse('caribbean_feed.xml')
+		listings = []
+		for entry in tree.iter(tag='item'):
+			#Formats the incident information into relevant subheadings
+			date = entry.find('pubDate').text
+			format_date = self.format_datetime(date)
+			description = entry.find('description').text.title()
+			#Converts the data into JSON format for application use
+			if 'tsunami' in entry.find('title').text.lower():
+				primary_category = 'Tsunami Message'
+			elif 'earthquake' in entry.find('title').text.lower():
+				primary_category = 'Earthquake Message'
+			else:
+				primary_category = 'Caribbean Sea Bulletin'
+			# compile information into json format for application use
+			listing = {"occurred_on":format_date, 
+				   "latitude":entry.find('{http://www.w3.org/2003/01/geo/wgs84_pos#}lat').text, 
+				   "longitude":entry.find('{http://www.w3.org/2003/01/geo/wgs84_pos#}long').text, 
+				   "description":description.replace('<Pre>', '').replace('</Pre>', '').strip(),
+				   "primary_category_name":primary_category,
+				   "source_id":entry.find('guid').text,
+			    }
+			listings.append(listing)
+		return listings
+    
+            
+	def format_datetime(self, date):
+		#convert date and time format to UTC
+		date_time = date.split()
+		monthDict = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
+		if date_time[1] in monthDict:
+			month = monthDict[date_time[1]]
+		format_time = str(date_time[2]) + '-' + str(month) + '-' + str(date_time[0]) + ' ' +str(date_time[3])
+		local = pytz.timezone("GMT")
+		naive = datetime.datetime.strptime(format_time, "%Y-%m-%d %H:%M:%S")
+		local_dt = local.localize(naive, is_dst = None)
+		utc_dt = str(local_dt.astimezone(pytz.utc))
+		return utc_dt
 	
 class Updater:
 	def __init__(self, key, account_id):
@@ -102,8 +109,8 @@ class Updater:
 				print("! WARNING: Unable to write cache file.")
 				print("! If there is an old cache file when this script is next run, it may result in duplicate reports.")
 		
-			# Wait 1 hour before trying again.
-			time.sleep(60 * 60 * 1)
+			# Wait 30 minutes before trying again.
+			time.sleep(60 * 30)
 			
 updater = Updater(key, account_id)
 updater.start()
