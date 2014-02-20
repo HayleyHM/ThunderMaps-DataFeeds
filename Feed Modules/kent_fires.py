@@ -9,80 +9,93 @@
 import urllib.request
 import pytz, datetime
 import xml.etree.ElementTree as ET
-import time
-import sys
-sys.path.append(r'/usr/local/thundermaps') #r'C:\Users\H\Documents\Jobs\ThunderMaps\Data Feeds\ThunderMaps' 
-import Wthundermaps
 from geopy import geocoders
+import time
+import re
+import uuid
+import sys
+sys.path.append(r'/usr/local/thundermaps') 
+import Wthundermaps
+
 
 key = 'THUNDERMAPS_API_KEY'  
-account_id = 'south-australia-fire-incidents'
+account_id = 'kent-england-fire-incidents'
 
 class Incidents:
 	def format_feed(self, source_ids):
-		incident_file = urllib.request.urlretrieve('http://www.cfs.sa.gov.au/custom/criimson/CFS_Current_Incidents.xml', 'fires.xml')
-		tree = ET.parse('fires.xml')
+		#Retrieves the data feed and stores it as xml
+		urllib.request.urlretrieve("http://www.kent.fire-uk.org/IncidentListRss.aspx", 'kent_fires.xml')
+		tree = ET.parse('kent_fires.xml')
 		listings = []
 		for entry in tree.iter(tag='item'):
-			source_id = entry.find('identifier').text
+			source_id = entry.find('guid').text
+			# Checks current source_ids to avoid geocoder duplication
 			if source_ids != None:
 				if source_id in source_ids:
-					print('Source ID already taken')
+					print('Source ID: %s already taken' %source_id)
 					pass
+				else:
+					pass			
+			summary = re.sub('<[^>]*>', ' ', (entry.find('description').text))
+			event = summary.split(' ', 1)
+			description = event[1].split(' Address : ')
+			address = description[1].split(' Attendance : ')
+			location = self.geocoder(address[0] + ', England')
+			if location == None:
+				pass
 			else:
 				date = entry.find('pubDate').text
 				format_date = self.format_datetime(date)
-				title = entry.find('title').text.title().replace(')', '').split('(')
-				location = self.geocoder(title[0] + 'Australia')
-				if location == None:
-					pass
-				if 'alarm' in title[1].lower():
-					primary_category = 'Alarm'		    
-				elif 'fire' in title[1].lower():
-					primary_category = 'Fire'
-				elif 'assist' in title[1].lower() or 'rescue' in title[1].lower():
-					priamry_category = 'Assist & Rescue'
-				elif 'vehicle' in title[1].lower():
-					primary_category = 'Vehicle Accident'
-				elif 'tree' in title[1].lower():
-					primary_category = 'Tree Down'
+				attendance = address[1].split('Stop Time : ')
+				title = entry.find('title').text.lower()
+				if 'flood' in title:
+					main_category = 'Flood'
+				elif 'car' in title or 'crash' in title or 'rtc' in title or 'vehicle' in title:
+					main_category = 'Vehicle Accident'				
+				elif 'fire' in title or 'alight' in title or 'smoke' in title:
+					main_category = 'Fire'
+				elif 'gas' in title:
+					main_category = 'Gas Leak'
+				elif 'rescue' in title:
+					main_category = 'Search & Rescue'
 				else:
-					primary_category = 'Emergency Dispatch'
-				#format each parameter into json format for application use
+					main_category = 'Dispatch Call Out'
+				# format each parameter into json format for application use
 				listing = {"occurred_on":format_date, 
-			                   "latitude":location[1][0], 
-			                   "longitude":location[1][1], 
-			                   "description":title[0] + entry.find('description').text.title().replace('<Br>', '<br/>'),  
-			                   "category_name":primary_category,
-			                   "source_id":source_id}
-				#create a list of dictionaries
+				           "latitude":location[0], 
+				           "longitude":location[1], 
+				           "description": title.title() + '<br/>' + description[0] + '<br/>' + 'Attendance: %s' %attendance[0],
+				           "category_name":main_category,
+				           "source_id":source_id
+				        }
 				listings.append(listing)
-		return listings				
-	
-	def format_datetime(self, date_time):
-		#convert date and time format from Australia/South to UTC
-		date_time = date_time.split()
+			time.sleep(2)
+		return listings
+
+	def format_datetime(self, date):
+		#convert date and time format from GMT to UTC
+		date_time = date.split()
 		monthDict = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
 		if date_time[2] in monthDict:
-			month = monthDict[date_time[2]]
+				month = monthDict[date_time[2]]
 		date_time = str(date_time[3]) + '-' + str(month) + '-' + str(date_time[1]) + ' ' + str(date_time[4])
-		local = pytz.timezone("Australia/South")
+		local = pytz.timezone("GMT")
 		naive = datetime.datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
 		local_dt = local.localize(naive, is_dst = None)
 		utc_dt = str(local_dt.astimezone(pytz.utc))
 		return utc_dt
-    
+
 	def geocoder(self, address):
 		#Geocodes addresses using the GoogleV3 package. This converts addresses to lat/long pairs
 		try:
 			g = geocoders.GoogleV3()
-			(lat, long) = g.geocode(address)
+			street, (lat, long) = g.geocode(address, timeout=5)
 			if (lat, long) == 'None':   
 				pass
 			else:
-				return (lat, long)
+				return lat, long
 		except TypeError:
-			pass 	
+			pass 
 	
 class Updater:
 	def __init__(self, key, account_id):
@@ -97,7 +110,6 @@ class Updater:
 			source_ids_file = open("_ids.source_ids_store", "r")
 			for i in source_ids_file.readlines():
 				source_ids.append(i.strip())
-			#source_ids = [i.strip() for i in source_ids_file.readlines()]
 			source_ids_file.close()
 		except Exception as e:
 			print("! WARNING: No valid cache file was found. This may cause duplicate reports.")
@@ -128,7 +140,7 @@ class Updater:
 				print('No new reports...')
 			# Save the posted source_ids.
 			try:
-				source_ids_file = open("_ids.source_ids_store", "a+")
+				source_ids_file = open("_ids.source_ids_store", "w")
 				for i in source_ids:
 					source_ids_file.write("%s\n" % i)
 				source_ids_file.close()

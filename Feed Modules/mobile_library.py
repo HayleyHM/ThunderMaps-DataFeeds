@@ -19,42 +19,48 @@ key = 'THUNDERMAPS_API_KEY'
 account_id = 'christchurch-mobile-libraries'
 
 class Incidents:
-	def format_feed(self):
+	def format_feed(self, source_ids):
 		#Retrieves the data feed and stores it as xml
 		urllib.request.urlretrieve("http://www.trumba.com/calendars/Mobile.rss", 'mobile_library.xml')
 		tree = ET.parse('mobile_library.xml')
 		listings = []
 		for item in tree.iter(tag='item'):
-			summary = item[1].text.split('<br/>')
-			address = summary[0]
-			title_address = item[0].text
-			if title_address[0] != 'New Year':
-				title_address = title_address[0].strip() + ', Christchurch'
-				location = self.geocoder(address, title_address)
-				if location == None:
-					continue
-				date_time = item[5].text
-				format_date = self.format_datetime(date_time)
-				unique_id = item[2].text.split('%')
-				title = item[0].text
-				if 'Mobile ' in title:
-					start = title.index('Mobile ')
-					end = start + 8
-					mobile_title = "Christchurch Mobile Library - " + title[start:end]
-				else:
-					mobile_title = "Chirstchurch Mobile Library"
-				description = summary[1].replace('&nbsp;&ndash;&nbsp;', ' until ')
-				link = '<a href="http://christchurchcitylibraries.com/mobiles/">Christchurch City Libraries</a>'
-				#format each parameter into json format for application use
-				listing = {"occurred_on":format_date, 
-				       "latitude":location[1][0], 
-				       "longitude":location[1][1], 
-				       "description":description + '\n' + 'For more information go to: %s' %link,
-				       "category_name":mobile_title,
-				       "source_id":unique_id[-1]
-				       }
-				listings.append(listing)
-			return listings
+			source_id = item[2].text.split('%')[-1]
+			if source_ids != None:
+				if source_id in source_ids:
+					print('Source ID already taken')
+					pass
+			else:			
+				summary = item[1].text.split('<br/>')
+				address = summary[0]
+				title_address = item[0].text
+				if title_address[0] != 'New Year':
+					title_address = title_address[0].strip() + ', Christchurch'
+					location = self.geocoder(address, title_address)
+					if location == None:
+						continue
+					date_time = item[5].text
+					format_date = self.format_datetime(date_time)
+					unique_id = item[2].text.split('%')
+					title = item[0].text
+					if 'Mobile ' in title:
+						start = title.index('Mobile ')
+						end = start + 8
+						mobile_title = "Christchurch Mobile Library - " + title[start:end]
+					else:
+						mobile_title = "Chirstchurch Mobile Library"
+					description = summary[1].replace('&nbsp;&ndash;&nbsp;', ' until ')
+					link = '<a href="http://christchurchcitylibraries.com/mobiles/">Christchurch City Libraries</a>'
+					#format each parameter into json format for application use
+					listing = {"occurred_on":format_date, 
+					       "latitude":location[1][0], 
+					       "longitude":location[1][1], 
+					       "description":description + '\n' + 'For more information go to: %s' %link,
+					       "category_name":mobile_title,
+					       "source_id":source_id
+					       }
+					listings.append(listing)
+		return listings
             
 	def geocoder(self, address, title_address):
 		#Geocodes addresses using the GoogleV3 package. This converts addresses to lat/long pairs
@@ -105,8 +111,10 @@ class Updater:
 		# Try to load the source_ids already posted.
 		source_ids = []
 		try:
-			source_ids_file = open(".source_ids_sample", "r")
-			source_ids = [i.strip() for i in source_ids_file.readlines()]
+			source_ids_file = open("_ids.source_ids_store", "r")
+			for i in source_ids_file.readlines():
+				source_ids.append(i.strip())
+			#source_ids = [i.strip() for i in source_ids_file.readlines()]
 			source_ids_file.close()
 		except Exception as e:
 			print("! WARNING: No valid cache file was found. This may cause duplicate reports.")
@@ -115,14 +123,14 @@ class Updater:
 		while True:
 			# Load the data from the data feed.
 			# This method should return a list of dicts.
-			items = self.feed_obj.format_feed()
+			items = self.feed_obj.format_feed(source_ids)
 			# Create reports for the listings.
 			reports = []
 			for report in items:
 				# Add the report to the list of reports if it hasn't already been posted.
 				if report["source_id"] not in source_ids:
 					reports.append(report)
-					print("Adding %s" % report["occurred_on"])
+					print("Adding %s" % report["source_id"])
 					# Add the source id to the list.
 					source_ids.append(report["source_id"])
 		
@@ -133,9 +141,11 @@ class Updater:
 					print("Sending %d reports..." % len(some_reports))
 					self.tm_obj.sendReports(account_id, some_reports)
 					time.sleep(3)
+			else:
+				print('No new reports...')
 			# Save the posted source_ids.
 			try:
-				source_ids_file = open(".source_ids_store", "w")
+				source_ids_file = open("_ids.source_ids_store", "a+")
 				for i in source_ids:
 					source_ids_file.write("%s\n" % i)
 				source_ids_file.close()
